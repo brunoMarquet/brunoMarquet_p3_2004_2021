@@ -1,0 +1,16 @@
+/* 
+#F2F2F2;
+#efe8f7
+#99E2D0 bleu vert
+linear-gradient(#ff79da, #9356dc)
+ resources linear-gradient : https://css-tricks.com/gradient- */
+
+ body{
+    max-width: 1100px;
+   margin: 0 auto;
+   font-family: 'Roboto', sans-serif;
+   /* background: white;*/
+  
+ font-size: 1em;
+
+}
