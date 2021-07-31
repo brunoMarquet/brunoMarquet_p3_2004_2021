@@ -14,6 +14,15 @@ linear-gradient(#ff79da, #9356dc)
  font-size: 1em;
 
 }
+
+a{
+  text-decoration: none;
+ color: white;
+}
+
+a:hover{ cursor: pointer;}
+
+
 #search_initial .fas{
     font-size:1.1rem;
       }
@@ -75,6 +84,7 @@ linear-gradient(#ff79da, #9356dc)
           }
           
   .howtoo:hover{
+    cursor: pointer;  
             /*color: rgb(20, 20, 200);*/
       background: rgb(240, 230, 230);
       box-shadow: 6px 4px 4px #888888;
@@ -82,8 +92,47 @@ linear-gradient(#ff79da, #9356dc)
           
   .howtoo:hover .fas{
   color: #9356DC;
-    
+ 
   }
+
+  
+
+
+  footer{
+    
+    display: flex;
+    flex-wrap: wrap;
+    background:#313231;
+    padding: 20px;
+    /*position:absolute; */
+    bottom:0px;
+    color:white;
+     
+      }
+      footer p{
+        
+        font-family:Shrikhand;
+      }
+      
+      /*----------footer--------- */
+      
+     footer li{
+      list-style-type:none;
+       padding: 5px 0px;
+    }
+      
+     footer li:hover{ color:rgb(168, 255, 155);
+        cursor: pointer;}
+        
+        /* obliger de redefinir i:hover a !! */
+       footer li:hover a{ color:rgb(168, 255, 155);}
+      
+    footer li > .fas{
+      
+      width: 40px;
+     /* padding-right:20px; BUg car icon tailles#"  */
+        }
+    
           
           
           
@@ -118,13 +167,6 @@ linear-gradient(#ff79da, #9356dc)
     background: linear-gradient(170deg, #ff79da, #9356dc);
     margin: 0 auto;
     padding: 16px 0px;
-    
-    /*padding-top: 3px;
-    padding-left: 30px;
-    margin-left: 30px;
-    text-shadow: 1px 1px white;
-    
-    padding-bottom:2rem;*/
     text-align: center;
     font-size: 1rem;
     color: white;
