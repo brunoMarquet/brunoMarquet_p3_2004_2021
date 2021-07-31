@@ -14,3 +14,100 @@ linear-gradient(#ff79da, #9356dc)
  font-size: 1em;
 
 }
+#search_initial .fas{
+    font-size:1.1rem;
+      }
+   
+    #search_initial{
+               background-color: #EAEAEA;
+      
+                        
+             padding: 16rem;
+              text-align: center;
+              font-size: 2rem;
+           }
+   
+   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+     font-weight: bolder;
+     font-size: 1.1rem;
+     color: rgb(133, 133, 133);
+     padding-left:5px; padding-bottom: 0px;
+    
+   }
+   #howtodo{
+    margin-left: 24px;
+    }
+    
+  #howtodo h2 {width:100%
+   }
+  
+  .howtoo .fas {margin-left:20px;
+    color:grey;
+    font-size:1.2rem;
+  }
+  .howtoo p {
+    margin-left:20px;
+     font-weight: bold;
+  }
+  
+  .howtoo{
+        display: flex;
+            justify-content: flex-start;
+           
+              align-items: center;
+              counter-increment: myIndex;
+               margin-top: 15px;
+               margin-left: 12px;
+               /*on compense le _ 12 de la puce*/
+              flex:51%;
+             flex-wrap: wrap;
+           height:64px;
+            width: 300px;
+             /* position: relative;*/
+            /* margin: 15px;
+            padding-left: 15px;
+            padding: 5px;
+            background:F6F6F6;rgb(240, 240, 240)
+            */
+            border-radius: 24px;
+            background: #F6F6F6;
+            box-shadow: 3px 2px 2px #eae7e7;
+          }
+          
+  .howtoo:hover{
+            /*color: rgb(20, 20, 200);*/
+      background: rgb(240, 230, 230);
+      box-shadow: 6px 4px 4px #888888;
+        }
+          
+  .howtoo:hover .fas{
+  color: #9356DC;
+    
+  }
+          
+          
+          
+  
+  .pucenum{
+    
+    position: relative;
+      /* absolu   counter-increment: myIndex;
+       padding: 2px;
+        padding-top: 8px;
+        padding-top: 6px; padding: 8px 3px;font-size: 0.4em;
+      */
+     background:#9356DC;
+    margin-left: -12px;
+    color:white;
+     text-align:center;
+   border-radius: 50%;
+     border: 1px solid white;
+    padding: 3px 8px 3px 8px;
+   
+  }
+  
+         
+  .pucenum:after{
+    content: counter(myIndex);
+  }
+   
