@@ -110,4 +110,40 @@ linear-gradient(#ff79da, #9356dc)
   .pucenum:after{
     content: counter(myIndex);
   }
+
+  .bt_iconique {
+  
+    width: 225px;
+    border-radius: 25px;
+    background: linear-gradient(170deg, #ff79da, #9356dc);
+    margin: 0 auto;
+    padding: 16px 0px;
+    
+    /*padding-top: 3px;
+    padding-left: 30px;
+    margin-left: 30px;
+    text-shadow: 1px 1px white;
+    
+    padding-bottom:2rem;*/
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    
+     font-family: Roboto;
+    box-shadow: 0px 0px 4px #000000;
+   /* font-weight: bold;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+  }
+  
+  
+  .bt_iconique:hover{
+    opacity:0.9;
+     box-shadow: 0px 0px 8px #000000;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+  }
+  
+  /*entre plat dessert*/
+ 
+  
    

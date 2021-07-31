@@ -1,15 +1,47 @@
-or create a new repository on the command line
-echo "# dimanche" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/brunoMarquet/dimanche.git
-git push -u origin main
-…or push an existing repository from the command line
-git remote add origin https://github.com/brunoMarquet/dimanche.git
-git branch -M main
-git push -u origin main
-…or import code from another repository
-You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Tous droits réservés.
 
+Testez le nouveau système multiplateforme PowerShell https://aka.ms/pscore6
+
+PS D:\open_class-room\soutenance\dimanche> git commit -m "03-activ css_sur la liste"
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   P3_style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\open_class-room\soutenance\dimanche> git add -A
+PS D:\open_class-room\soutenance\dimanche> git commit -m "03-activ css_sur la liste"
+[main 8ff7c51] 03-activ css_sur la liste
+ 1 file changed, 97 insertions(+)
+PS D:\open_class-room\soutenance\dimanche> git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.12 KiB | 1.12 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/brunoMarquet/dimanche.git
+   5ccf7c0..8ff7c51  main -> main
+PS D:\open_class-room\soutenance\dimanche> git add -A
+PS D:\open_class-room\soutenance\dimanche> git commit -m "04-page _dyn_en js:pseudo-node.js"
+[main bbd0ec4] 04-page _dyn_en js:pseudo-node.js
+ 4 files changed, 953 insertions(+)
+ create mode 100644 page_dyn/P3_dyn.css
+ create mode 100644 page_dyn/P3_script.js
+ create mode 100644 page_dyn/index_dyn.html
+ create mode 100644 page_dyn/restau.html
+PS D:\open_class-room\soutenance\dimanche> git push
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 8.12 KiB | 4.06 MiB/s, done.
+Total 7 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/brunoMarquet/dimanche.git
+   8ff7c51..bbd0ec4  main -> main
+PS D:\open_class-room\soutenance\dimanche>
