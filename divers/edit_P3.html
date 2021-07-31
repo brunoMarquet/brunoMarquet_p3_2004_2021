@@ -1,0 +1,265 @@
+<html lang="fr">
+  
+  <head>
+   
+      <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+       <link rel="icon" href="../favicon.ico" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>edition</title>
+    
+    <style>
+   header{
+      display: flex ;
+       justify-content:space-evenly;
+       align-items:center;
+       padding: 15px;
+      border: 1px solid #0065FC;
+      border-radius: 0 10px;
+    }
+
+main{
+
+   display: flex;
+   width: 100%;
+gap: 20%;
+ 
+}
+
+
+section {
+ 
+  flex: 40%;
+  padding: 15px;
+ margin: 10px;
+  border: 1px solid #0065FC;
+  border-radius: 10px;
+  border-radius:  0 10px 0 0;
+  
+}
+article{
+  
+  padding: 5px;
+ margin: 5px;
+ margin-top: 15px;
+  border-left: 1px solid #0065FC;
+  border-bottom: 1px solid #0065FC;
+  border-radius:  10px  0 10px 10px;
+  
+  
+}
+</style>
+<script>
+  
+  var Ptitre=[["La palette du goût","La_palette_du_gout","Ménilmontant","restau1.jpg","La palette du goût: photo de la table 12","1"],
+["La note enchantée","La_note_enchantee","Charone","restau2.jpg","le restau ,La_note_enchante à Charone : photo de Camille ...","1"],
+["À la française","A_la_francaise","Cité Rouge","restau3.jpg","À la française,coyright Sigma","0"],
+["Le délice des sens","Le_delice_des_sens","Folie-Méricourt","restau4.jpg","Le_delice_des_sens- photo de promotion by Fred","0"]];
+
+
+/*______________
+   ____ data
+   ___________________*/
+
+  function mdata(){
+    
+ //case
+ 
+ pentree=[]; pplat=[]; pdessert=[];
+ truc=idrestau;
+ 
+if (truc===0){
+pentree=[["Fricassée d'escargot","Au piment d'Espelette","25€"],
+["Foie gras de canard mi-cuit","Et ses copeaux de truffe noire","35€"],
+["Oeuf au plat","Assaisonné à la truffe sur lit de caviar","20€"]]
+
+pplat=[["Filet de boeuf aux herbes","Accompagné de sa ribambelle de légumes","40€"],
+["Parmentier de queue de boeuf","À la truffe noire sur sa purée de panais","35€"],
+["Filet de turbot","Aux agrumes","44€"]]
+
+pdessert=[["Paris-Brest","Revisité","18€"],
+["Macaron au chocolat d'exception ","Et glace à la vanille de Madagascar","22€"],
+["Mousse au chocolat","Au piment d'Espelette et à la truffe noire","23€"]]
+}
+if (truc===1){
+pentree=[["Tartare de thon","Assaisonné au yuzu","25€"],
+["Bouchée de homard croustillant","Et sa farandole de petits légumes","35€"],
+["Velouté de cèpes","Aux truffes","20€"]]
+
+pplat=[["Poulet rôti aux herbes de Provence","Et sa crème de truffe","40€"],
+["Langouste rôtie","Et ses légumes de saison","35€"],
+["Côte de boeuf Angus","Et sa purée de panais","44€"]];
+
+pdessert= [["Farandole de desserts","Du chef","18€"],["Crème brulée","Revisitée","22€"],["Tiramisu","À la noisette","23€"]];
+
+  }
+
+  if (truc===2){
+    pentree=[["Ravioles de foie gras","Accompagnés de leur crème à la truffe","25€"],
+["Caviar osciètre","Sur blini à la farine de blé noir","35€"],
+["Homard et espuma de potiron","Mariné aux zestes d'orange","20€"],
+["Foie gras de canard cuit entier","Confiture de figue et pain toasté","35€"]];
+
+pplat=[["Noix de coquilles Saint-Jacques","Sur lit de purée de céleri-rave","40€"],
+["Langoustine poêlée","Purée de patate douce","35€"],
+["Mijoté de queue de boeuf","Et riz sauvage aux zestes de citron","44€"]];
+
+pdessert=[["Macaron noisette et chocolat","Glace au caramel brun et sel de Guérande","18€"],
+["Baba au rhum revisité","Avec son coulis de citron","22€"],
+["Tarte au citron meringuée","Déstructurée","23€"]];
+
+
+  }
+
+  if (truc===3){
+
+    pentree=[["Tartare de poulpe acidulé","Aux zestes d'orange","25€"],
+["Velouté de légumes d'antan","Carotte, panais, topinambour","35€"],
+["Soupe à l'oignon","Revisitée","20€"]];
+pplat=[["Coquilles Saint-Jacques","Accompagnées d'une purée de panais","40€"],
+["Magret de canard","Et parmentier de pommes de terre","35€"],
+["Pigeonneau d’Ille-et-Vilaine","Sur son lit de gnocchis aux légumes","44€"]];
+
+pdessert=[["Pétales de violettes glacés","Et purée de noisettes","18€"],
+["Fondant au chocolat","Revisité","22€"],
+["Millefeuille croustillant","Myrtilles et pâte d’amande","23€"]];
+
+}
+Pmenu.push(pentree);
+Pmenu.push(pplat);
+Pmenu.push(pdessert);
+
+//return menu;
+}
+ 
+ /*------------
+ ----fin data edito
+ -----------  */
+ 
+  
+var vrubrique=["ENTREES","PLATS","DESSERTS"];
+
+var pedit_html=false;
+
+var idrestau=-1;
+var Pmenu=[];
+
+//__________methodes
+
+function dolistmenu(truc){
+idrestau=truc;
+    vtt="";
+     vtt="<!--édité le "+new Date().toLocaleString()+"-->\n<main>\n";
+vimage="images/rest"+truc+".jpg";
+vimage="images/restau1.jpg" ; //provisoire
+
+vtt1=Ptitre[idrestau][0];
+
+document.title=vtt1;
+
+mdata(); //"nourrir la carte fonction du restau"
+
+//vtt='<img src ='"+vimage+ '"/>;
+vtt += '<h2>'+vtt1+'<i class="far fa-heart"></i></h2>\n';
+
+
+// alert ("/images/"+Ptitre[idrestau][3]);
+  
+  /* bug a venir
+  
+  document.images[1].src="images/"+Ptitre[idrestau][3];
+   document.images[1].alt=Ptitre[idrestau][4];
+   console.log(document.images[1].alt);
+   */
+
+for (j=0;j<3;j++){
+vtt =  vtt +'\n<div="rubriq">'+vrubrique[j]+'</div><div class="tiret"></div>\n';
+
+vm=Pmenu[j].length;
+
+//vm=vtab.length;
+//debug !
+
+
+ 
+
+var vplat=[];
+for (i=0 ; i<vm ; i++){
+  //acquisition
+  vfood=Pmenu[j][i][0];
+  vfoodinfo=Pmenu[j][i][1];
+  vfoodprice=Pmenu[j][i][2];
+  
+
+vtt += ' <article class="le_plat" onclick="mchoix('+j+','+i+')"><div class="food">'+  vfood+'</div><span class="foodinfo">'+ vfoodinfo+'</span><span class="foodprice">'+ vfoodprice +'</span><div class="caption-check-box"><i class="fas fa-check-circle"></i></div></article>\n';
+
+
+}
+
+
+}
+//alert (vtt);
+ vtt+="</main><!--fin édition-->";
+//document.getElementById("lemenu").innerHTML=vtt;
+document.getElementById("texte").innerHTML=vtt;
+}
+
+function dolistrestau(){}
+  
+</script>
+
+</head>
+  
+  <body>
+<header>
+    <a href="../index.html" >
+          <img src="../images/ohmyfood.png"   alt="logo d'ohmyfood"></a>
+    <h1>Edition</h1>
+  <a href="#"><h2>make-up</h2></a>
+  </header>
+
+<h2>Editer dynamiquement les "4 # menus et la liste des restaurants</h2>
+<main>
+
+<section>
+  <article>
+<ul>
+  <li>les données pseudo dynamiques sont stockés dans des array, ce qui permet de rester compatible avec ultérieurement l'emploi de js ou node,de php et de java...etc</li>
+  <li>
+    structure des tableaux:h1=[....]</li>
+    <li>par exemple :[".....];</li>
+    
+  
+  
+</ul>
+</article>
+
+ <article>
+
+  <a href="#" onclick="dolistrestau()">Liste des restaurants</a>
+    
+  
+  
+
+</article>
+<article>
+<ul>
+  <li> <a href="#" onclick="dolistmenu(0)">menu du restaurant : 1</a></li>
+ <li><a href="#" onclick="dolistmenu(1)">menu du restaurant : 2</a></li>
+  <li> <a href="#" onclick="dolistmenu(2)">menu du restaurant : 3</a></li>
+   <li><a href="#" onclick="dolistmenu(3)">menu du restaurant : 4</a></li>
+ 
+  
+    
+  
+  </ul>
+
+</article>
+</section>
+<section>
+  <p id="info">:</p>
+
+ <textarea id="texte" rows="030" cols="100"></textarea>
+</section>
+</main>
+</body>
+</html>
