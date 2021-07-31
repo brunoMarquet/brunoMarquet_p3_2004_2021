@@ -1,0 +1,123 @@
+<html lang="fr">
+ 
+<head>
+ <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+ <script src="https://kit.fontawesome.com/4c9a468499.js" crossorigin="anonymous"></script>
+  <title>a faire</title>
+<link rel="stylesheet" href="P3_dyn.css">
+<script src="P3_script.js"></script>
+
+    <style>
+       
+       
+        </style>
+   
+
+</head>
+<body onload="minit()">
+   <header>
+<a  href="index_dyn.html"> <i class="fas fa-arrow-left" id="comeback"></i></a>
+<img src="../images/ohmyfood.png"   alt="logo d'ohmyfood">
+</header>
+
+<img id="ziresto" src="images/restau3.jpg"  alt="coucou1"/>
+
+<div id="lemenu"></div>
+
+<div id="bt_iconique">Commander</div>
+
+<br><br>
+
+
+<div class="titre_resto">chez Marius & co<i class="far fa-heart coeur1"></i><i class="fas fa-heart hover-icon coeur2"></i></div>
+
+
+
+<br><br>
+
+
+<article class="le_plat" onclick="mchoix(0,0)">
+  <div class="plat_legende">
+      <div class="food">Pigeonneau d’Ille-et-Vilaine</div>
+      <div class="foodinfo">Sur son lit de gnocchis aux légumes</div>
+  </div>
+  <div class="plat_prix"><span class="foodprice">40€</span></div>
+  <div class="plat_checked"><i class="fas fa-check-circle"></i></div>
+</article>
+
+
+
+<br><br><div class="test33"> <i class="fas fa-check-circle"></i>Découvrez nos restaurants d'exception, selectionnés par nos soins</div>
+
+
+
+ <style>
+ 
+ .le_plat:hover .foodinfo, .le_plat:hover .food {
+    overflow: hidden;
+   white-space: nowrap;
+ text-overflow: ellipsis;
+ 
+   
+ }
+ .plat_prix{min-width:40px}
+    
+  .le_plat:hover .fas{
+-ms-transform: rotate(90deg); /* IE 9 transition:rotate :NON;*/
+  transform: rotate(90deg);
+    
+  }
+   
+    
+       
+.test33{width:400px;
+height:22px;
+  }
+  
+.test33:hover .fas{color:red;
+-ms-transform: rotate(90deg); /* IE 9 */
+  transform: rotate(90deg);}
+  
+/*.test33 .fas{ transition: rotate 1s;} */
+
+.test33:hover{
+  width:100px;
+   overflow: hidden;
+   white-space: nowrap;
+ 
+  text-overflow: ellipsis;
+     border: 1pX dashed blue;
+}
+        </style>
+<br><br>
+<br><br>
+<br><br>
+
+<article class="le_plat" onclick="mchoix(0,0)">
+<div class="plat_legende">
+
+</div>
+<div class="plat_prix"><span class="foodprice">40€</span></div><!--OOups -->
+
+
+<div class="plat_checked"><i class="fas fa-check-circle"></i></div>
+
+
+</article>
+
+
+<footer>
+    <div>Ohmyfood</div>
+    <ul>
+      
+        <li><i class="fas fa-utensils"></i>Proposer un restaurant</li>
+        <li><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
+        <li> Mentions légales</li>
+        <li><a href="mailto:contact_ohmyfood@gmail.com?subject=Mail de contact depuis notre site">Contact</a></li>
+        <li>ressource: https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_text-overflow</li>
+    </ul>
+</footer>
+
+
+</body>
+</html>

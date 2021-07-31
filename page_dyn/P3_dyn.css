@@ -1,0 +1,476 @@
+/*
+#F2F2F2;
+#efe8f7
+#99E2D0 bleu vert
+linear-gradient(#ff79da, #9356dc)
+ resources linear-gradient : https://css-tricks.com/gradient-borders-in-css/  
+ 
+ resources svg loader:  https://css-tricks.com/my-struggle-to-use-and-animate-a-conic-gradient-in-svg/
+*/
+        
+
+body{
+         max-width: 1100px;
+        margin: 0 auto;
+          font-family: Arial,Georgia, serif;
+        /* background: white;*/
+         font-size: 100%; /* nota bene 100% = 16px  - Ailleurs mettre combien de rem - par ex au lieu de 32px mettre 2rem */
+      font-size: 1em;
+         margin-left: 2rem;
+}
+        
+        a{
+          text-decoration: none;
+         color: white;
+        }
+
+        a:hover{ cursor: pointer;}
+        
+        
+        #loadtransition{
+          position: absolute;
+          width: 1000px;
+          height: 1000px;
+          background: grey;
+        }
+        
+        
+#info_restau2{ background-color:  #eaeaea;
+
+    text-align: center;
+    padding: 2rem 0;
+}
+
+
+#petit_gradiant{
+    height: 12px;
+    background: linear-gradient(to bottom, #cfcfcf, #eaeaea);
+}
+#Fonctionnement{
+   background-color: #cbcbcb;
+    padding: 1rem;
+   /* border-top: 16px solid linear-gradient(to top, red , yellow); */
+}
+/*AHHHHHHH*/
+ #Fonctionnement{
+          
+          /*background-color: #eaeaea; */
+          /* un peu pompé
+           background: linear-gradient(to bottom, #cfcfcf, #eaeaea, #eaeaea, #eaeaea, #eaeaea, #eaeaea);
+          */
+         
+           /* un peu pompé*/
+          padding: 1rem;
+           text-align: center;
+           font-size: 2rem;
+        }
+#search_restau {
+
+          border:transparent;
+          background:transparent;
+        }
+        
+   #flex_howtoo{
+       display: flex;
+       flex-wrap: wrap;
+   }
+   #choixrestaurant{
+     display: flex;
+       flex-wrap: wrap;
+        justify-content: space-around;
+   }
+  #choixrestaurant h2{
+      width: 100%;
+      
+  } 
+        
+.cadre_imag {
+  height: 220px;
+
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+}
+        
+  .cadre_imag img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.rubriq{
+  display:flex;
+  border: 1px  solid red;
+}
+
+      
+        
+       nav {
+          text-align: center;
+         background: rgb(240, 240, 240);
+         margin-top: 20px;
+         padding: 20px;
+         border: 1px solid red;
+          
+           
+        }
+        
+        
+        #lemenu{
+          width: 400px;
+          /*opacity: 0.9;*/
+           background: rgb(240, 240, 240);
+            border-radius: 20px 20px 0 0;
+            position: relative;
+           top:-40px;
+           /*<0 pour croper le visuel du restau choisi*/
+        }
+        
+       
+.pucenum:after{
+  content: counter(myIndex);
+}
+
+#howtodo{
+   display: flex;
+    justify-content: center;
+            align-items: center;
+           flex: 30%;
+           flex-wrap: wrap;  
+    
+}
+#howtodo h2 {width:100%}
+
+    .howtoo{
+         display: flex;
+          justify-content: space-between;
+          /* position: relative;*/
+            align-items: center;
+            counter-increment: myIndex;
+            flex:30%;
+           flex-wrap: wrap;
+          height:32px;
+          width: 200px;
+          margin: 15px;
+          padding-left: 15px;
+          padding: 5px;
+          border-radius: 20px;
+          background: rgb(240, 240, 240);
+          box-shadow: 3px 2px 4px #888888;
+        }
+        
+        .howtoo:hover{
+          /*color: rgb(20, 20, 200);*/
+        background: rgb(240, 230, 230);
+        box-shadow: 6px 4px 4px #888888;
+          
+        }
+        
+        .howtoo:hover .fas{
+          color: #9356DC;
+        }
+        
+        .resto_txt {
+            margin-left: 2rem;
+            color: black;
+        }
+       
+
+.annonce1{
+    display: flex;
+     flex-direction: column;
+   
+     margin: 5px;
+  border: 5px solid #fff;
+  border-radius: 24px;
+  background:#fff;
+  /*height: 280px;
+  loat: left; */
+  width: 240px;
+   box-shadow: 0px 0px 8px #000000;
+    
+}
+             .restobox{
+               position:relative;
+          margin: 25px;
+          padding: 0px;
+          width: 360px;
+          border-radius: 20px;
+          background: white;
+            box-shadow: 0px 0px 4px #000000;
+          
+          
+        }
+         .restobox:hover{
+             background: #f4f9f4;
+               box-shadow: 0px 0px 8px #000000;
+           
+         }
+         .restobox:hover fa-heart{
+           
+            background: red;
+         }
+         
+        
+
+
+
+ #ziresto{width:400px;}
+ 
+     
+        
+  #bt_iconique {
+  height: 50px;
+  width: 240px;
+  border-radius: 25px;
+  background-image: linear-gradient(#ff79da, #9356dc);
+  margin: 0 auto;
+  padding: 8px 0px;
+  /*padding-top: 3px;
+  padding-left: 30px;
+  margin-left: 30px;
+  text-shadow: 1px 1px white;
+  */
+   text-align: center;
+  
+ 
+  font-size: 16px;
+  color: white;
+  box-shadow: 0px 0px 4px #000000;
+ /*
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+#bt_iconique:hover{
+   box-shadow: 0px 0px 8px #000000;
+  /*cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
+.new_resto{
+ 
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width:100px;
+  color: #19640e;
+  text-align: center;
+  background:#99E2D0;
+  padding: 5px 0px;
+}
+
+.pucenum{
+  position: relative;
+    /* absolu   counter-increment: myIndex; */
+ margin-left: -12px;
+ height:26px;
+  width: 26px;
+  color:white;
+   text-align:center;
+  background:#9356DC;
+   padding: 2px;
+   padding-top: 4px;
+   border-radius: 50%;
+   border: 1px solid white;
+   
+}
+
+  footer{
+    
+display: flex;
+flex-wrap: wrap;
+background:#313231;
+padding: 20px;
+/*position:absolute; */
+bottom:0px;
+color:white;
+ 
+  }
+  
+  /*----------footer--------- */
+  
+ footer li{
+  list-style-type:none;
+   padding: 5px 0px;
+}
+  
+ footer li:hover{ color:rgb(168, 255, 155);
+    cursor: pointer;}
+    
+    /* obliger de redefinir i:hover a !! */
+   footer li:hover a{ color:rgb(168, 255, 155);}
+  
+footer li > .fas{
+  
+  width: 40px;
+ /* padding-right:20px; BUg car icon tailles#"  */
+    }
+    
+   /*----------FIN footer--------- */
+   
+   
+   #header
+{
+    display: flex;
+    justify-content: center;
+    
+}
+
+#comeback{
+  font-size: 24px;
+  color: black;
+}
+#comeback:hover{color: blue;}
+        
+.le_plat {
+          display:flex;
+          margin: 15px;
+          /*padding: 5px; padding-right: 15px;*/
+           height: 50px;
+          min-width: 300px;
+          border-radius: 10px;
+           background: white;
+          
+           
+}
+        
+.le_plat:hover{
+     background: #f4f9f4;
+     cursor: pointer;
+        }
+        
+        
+        .le_plat:hover .plat_checked{
+           transition-property: width;
+  transition-duration: 0.4s;
+         display: inline;
+        
+        }
+        
+        le_plat:hover .fas{display: inline;
+         size:3rem;
+        }
+        
+        
+         
+  
+ .le_plat:hover .foodinfo, .le_plat:hover .food {
+    overflow: hidden;
+   white-space: nowrap;
+ text-overflow: ellipsis;
+ 
+   
+ }
+ .plat_prix{min-width:40px}
+    
+  .le_plat:hover .fas{
+-ms-transform: rotate(90deg); /* IE 9 transition:rotate :NON;*/
+  transform: rotate(90deg);
+    
+  }
+        
+        
+        .titre_resto{position:relative;
+          border:1px solid red;
+        }
+        
+/*.titre_resto:hover .coeur2{
+font-size: 16px;
+opacity:1;
+}*/
+        
+.les_coeurs .fas, .les_coeurs .far{
+  color: black;
+  position:absolute;
+  font-size: 1.8rem;
+   right: 30px;
+   bottom: 30px;
+  }
+   .les_coeurs .far{
+       transition:opacity 800ms;    
+   }  
+    .les_coeurs .fas{
+background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   
+   opacity: 0;
+   transition:opacity 800ms;   
+    
+        
+  /* 
+  transition:opacity 400ms;   
+  */
+  }
+.les_coeurs .fas:hover{
+      opacity: 1;   
+    }    
+ 
+ .les_coeurs:hover .far{
+      opacity:0;   
+    }  
+  .plat_prix{
+     border: 1pX dotted grey;
+    flex:1;
+    align-self: flex-end;
+    width:40px;
+    font-size: 16px;color: black; font-weight: bold;
+  }
+  .plat_legende{
+     width:220px;
+    overflow: hidden;
+     border: 1pX dashed blue;
+  }
+  .resto_legende{ position:relative;}
+  
+  .plat_checked{
+    display: none;
+    /*opacity:0;*/
+     background-color: #99E2D0;
+      text-align:center;
+     padding: 0px;
+     
+      height:100%;
+      border-radius: 0 10px 10px 0;
+      
+  
+     
+      
+    /*width:0px; transition: width 800ms; */
+  }
+  
+ .tiret{
+   border-top: 2px solid #99E2D0;
+    width: 50px;
+  margin: 0px;
+  margin-top: 12px;
+  }
+
+        
+ /*----------------------------------- */
+/*------------ texte------------------ */
+ /*----------------------------------- */
+.food{font-size: 16px;font-weight: bold; overflow: hidden;}
+.foodinfo{font-size: 14px; overflow: hidden;}
+.foodprice{font-size: 16px;font-weight: bold;
+          
+          /*text-align: right;margin-left: 50px;;padding-right: 25px;*/
+            
+          }
+          
+ 
+  /*----------------------------------- */
+         /*------------ BAD pour memoire------------------ */
+          /*----------------------------------- */
+          
+        hr {/*a virer*/
+  height:1px;
+  width: 100px;
+  margin: 10px;
+background-color: green;
+
+  }
+  
+  /*----------- ajout le 15/07 */
+ 
+   
+    
