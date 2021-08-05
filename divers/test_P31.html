@@ -1,0 +1,923 @@
+<html lang="fr">
+  
+  <head>
+   
+      <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+       <link rel="icon" href="../favicon.ico" />
+      
+        <title>Transitions multiples</title>
+    
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+          <link rel="stylesheet" href="divers.css">
+          
+          
+          
+          <style>
+          
+          
+          /*
+          .centre .far {color: #9356DC;}
+          
+          */
+ section { display:flex;}
+          
+  .rond_int{
+  position:absolute;
+  height:32px;
+  width:32px;
+  margin: 24px;
+  border: 4px solid  #9356DC;
+  border-radius: 50%;
+  }
+.rond_ext{
+  position:absolute;
+  height:48px;
+  width:48px;
+  margin: 16px;
+  border: 4px solid  #9356DC;
+  border-radius: 50%;
+}
+ .rond{
+  height:40px;
+  width:40px;
+  margin: 20px;
+  
+  border:4px dashed blue;
+  border-radius: 50%;
+  transition: transform 1s;
+}
+.taille2{
+   border:4px dashed #9356DC;
+}
+.taille3{
+   border:4px solid transparent;
+   border-left: 4px solid #9356DC;
+    border-right: 4px solid #9356DC;
+}
+.loupe{overflow: hidden;
+  /**/
+  position:absolute;
+}
+
+ .boite2:hover .txt_defil{
+  transform: translate(-80px,0);
+  
+}
+.boite2:hover .emoji_defil{
+  transform: translate(0,-180px);
+  
+}
+
+.emoji_defil{
+  position:absolute;
+  font-size: 24px;
+  transition: transform 2s;
+}
+
+.txt_defil{
+  position:absolute;
+  font-size: 24px;font-weight: bold;
+  transition: transform 1s;
+}
+.boite2 {
+   position:relative;
+   margin-left:10px;
+   border-radius: 10px;
+           width: 320px;
+          border: 1pX dashed blue;}
+}
+.boite2 {border-color: blue;}
+.boite2:hover .rond {
+ transform: rotate(720deg);
+}
+
+
+.fish{
+  position:absolute;
+  font-size:40px;
+  counter-increment: num_fish;
+  transition: transform 0.8s;
+
+}
+
+
+.fish:nth-child(3n) {
+  left:90px;
+  padding-top:5px;
+  font-size: 20px;
+  
+}
+  
+.fish:nth-child(3n+1) {
+  font-size: 20px;
+  
+}
+  
+.fish:nth-child(3n+2) {
+  font-size: 30px;
+  }
+
+.fish:nth-child(1) {
+  top:20px;
+  left:20px;
+  
+}
+.fish:nth-child(2) {
+  top:20px;
+  left:150px;
+  
+}
+.fish:nth-child(3) {
+  top:20px;
+  left:250px;
+  
+}
+.fish:nth-child(4) {
+  top:60px;
+  left:20px;
+  
+}
+.fish:nth-child(5) {
+  top:60px;
+  left:100px;
+  
+}
+.fish:nth-child(6) {
+  top:60px;
+  left:200px;
+  
+}
+.fish:nth-child(7) {
+  top:150px;
+  left:20px;
+  
+}
+.fish:nth-child(8) {
+  top:150px;
+  left:100px;
+  
+}
+.fish:nth-child(9) {
+  top:150px;
+  left:200px;
+  
+}
+
+ /*
+ .fish:before{
+    content: 'num : 'counter(num_fish);
+    
+  
+}
+ dommage !
+ .fish: nth-child(n) {
+   left: calc(n * 46px);
+}
+.fish:before{
+    content: 'num : 'calc(5 + counter(num_fish));
+  
+  ????
+.boite2:hover .fish:nth-child(3){
+  transform: translate(260px,-130px);
+ 
+}
+}
+
+
+*/
+.hauteur250{
+  height:250px;
+}
+#ptit_cercle_1{
+       top:28px;
+       left:28px;
+       border-color: blue;
+    }
+    
+#ptit_cercle_2{
+       top:60px;
+       left:64px;
+       border-color: yellow;
+    }
+#ptit_cercle_3{
+       top:40px;
+       left:100px;
+       border-color: black;
+    }
+#ptit_cercle_4{
+       top:60px;
+       left:136px;
+       border-color: green;
+    }
+    
+#ptit_cercle_5{
+       top:28px;
+       left:168px;
+       border-color: red;
+    }
+
+.boite2:hover .fish{
+  transform: translate(260px,20px);
+ 
+}
+
+
+  
+
+.rond13{
+  height:40px;
+  width:40px;
+  
+  border: 4px dashed  grey;
+  border-top:4px solid green;
+  border-radius: 50%;
+  transition: transform 1s;
+}
+.rond14{
+  height:10px;
+  width:10px;
+  
+  border: 2px dashed  grey;
+  border-top:2px solid blue;
+  border-radius: 50%;
+  transition: transform 1s;
+}
+.boite2:hover .fa-star{
+  transform: rotate(1200deg);
+ }
+  .boite2:hover .rond13 {
+ transform: rotate(120deg);
+}
+.boite2:hover .rond14 {
+ transform: rotate(480deg);
+}
+.les_etoiles .fa-star{
+  
+   color:green;
+    transition: transform 1s;
+}
+
+.inverse{
+  /*align-self: flex-end;*/
+}
+.boite_inverse{
+  display:flex;
+   flex-direction: column;
+  align-items: flex-end;
+}
+
+.cercle_dashed{
+  position:absolute;
+  height:40px;
+  width:40px;
+  border: 4px dashed  grey;
+  border-radius: 50%;
+  transition: transform 1s;
+    }
+   
+   
+    .boite2:hover .cercle_dashed{
+      
+      transform: rotate(720deg);
+      
+    }
+    
+.quart_vert{border-top:4px solid green;}
+
+.the_flex{display:flex;
+  flex direction:column;
+}
+
+.hauteur100{height:200px;}
+
+.bocal{
+  height:200px;
+width:240px;
+ overflow: hidden
+}
+
+.absolut{position:absolute;}
+
+.rond2{
+  height:60px;
+  width:60px;
+  
+  
+  border-top:4px solid grey;
+  border-radius: 50%;
+  
+}
+
+.centre{
+  text-align: center;
+color: blue;
+  
+}
+
+.ecran{height:220px;
+position:relative;
+overflow: hidden;
+  background-color:hsl(0, 0%, 30%);
+}
+
+.boite2:hover c, .boite2:hover c1{
+   opacity:1;
+  
+}
+/*c C1,Cé balise bidon pour emoji*/
+c:nth-child(1){
+  opacity:0;
+  transition: opacity 0.4s;
+  font-size:64px;
+  margin-top: 50px;
+  padding:20px;
+}
+
+c:nth-child(2){font-size:24px;
+  margin-top:  100px;
+  padding:20px;
+  opacity:0;
+  transition: opacity 0.4s;
+  transition-delay: 0.5s;
+}
+
+c:nth-child(3){
+  opacity:0;font-size:24px;
+  transition: opacity 0.4s;
+  transition-delay: 1s;
+}
+
+c:nth-child(4){
+  opacity:0; font-size:20px;
+  transition: opacity 0.4s;
+  transition-delay: 1.4s;
+}
+
+c1:nth-child(1){
+  opacity:0;
+  transition: opacity 0.4s;
+  font-size:24px;
+  }
+c1:nth-child(2){font-size:26px;
+  opacity:0;
+  transition: opacity 0.4s;
+  transition-delay: 0.5s;
+}
+c1:nth-child(3){font-size:32px;
+  opacity:0;
+  transition: opacity 0.4s;
+  transition-delay: 1s;
+}
+
+
+.position21{top:6px; left:46px}/*pas ok*/
+.position22{top:4px; left:20px}
+
+c3{
+  position: absolute;
+  font-size:20px;
+  opacity:0.3;
+}
+.boite2:hover c3:nth-child(1){
+ left:20px;
+  
+  
+}
+
+c2:nth-child(1){position: absolute;
+ bottom: 5px;
+ left:400px;
+
+  font-size:64px;
+  
+  transition: transform 0.8s;
+}
+c2:nth-child(2){
+  position: absolute;
+ bottom: 50px;
+ 
+ left:360px;
+  font-size:48px;
+  transition-delay: 1s;
+  transition: transform 0.4s;
+}
+c2:nth-child(3){position: absolute;
+ bottom: 5px;
+ left:50px;
+ opacity:0;
+font-size:64px;
+  transition-delay: 1.5s;
+  transition: opacity 1s;
+}
+
+.boite2:hover c2:nth-child(1), .boite2:hover c2:nth-child(2){
+ 
+  transform: translate(-360px,0px);
+  
+  
+}
+.boite2:hover c2:nth-child(3){
+   opacity:1;
+}
+.myoverflow{
+  height:280px;
+  width:450px;
+  overflow: hidden;
+}
+.petite2{width:60px;}
+
+</style>
+</head>
+<body>
+  <header>
+    <a href="../index.html" >
+          <img src="../images/ohmyfood.png"   alt="logo d'ohmyfood"></a>
+    <h1>Tests divers et apprentissage transitions(spinner)<i class="fas fa-spinner"></i></h1>
+   <a href="make_up.html"><h2>make-up</h2></a>
+  </header><br>
+<div>
+  <i class="fas fa-spinner"></i>(f110code spinner)<i class="fas fa-undo"></i>(f0e2)
+<i class="fas fa-sync-alt"></i>(f2f1)
+<i class="fas fa-#9356DCo-alt"></i>(f2f9)
+<i class="fas fa-recycle"></i>(f1b8)<br><i class="fas fa-check-circle"></i><i class="fas fa-arrow-left" id="comeback"></i>
+<br>
+<br>
+   &#127865; &#127856;&#127858;&#127857; &#128018; &#128018; &#128018;&#128511;<br></div>
+    <section>
+      
+      
+      <style>
+        .howtoo .fas, .howtoo p {margin-left:20px;}
+
+.howtoo{
+  display: flex;
+          justify-content: flex-start;
+  
+       position: absolute;
+       transition: transform 0.4s;
+       
+          width:400px;
+          /* position: relative;*/
+            align-items: center;
+            counter-increment: myIndex;
+             margin-top: 10px;
+          border-radius: 20px;
+          background: rgb(240, 240, 240);
+          box-shadow: 3px 2px 4px #888888;
+        }
+        
+.howtoo:hover{
+          /*color: rgb(20, 20, 200);*/
+    background: rgb(240, 230, 230);
+    box-shadow: 6px 4px 4px #888888;
+      }
+        
+.howtoo:hover .fas{
+color: #9356DC;
+  
+}
+.pucenum{
+   position: absolute;
+ margin-left: -12px;
+ padding: 3px 8px 3px 8px;
+
+  color:white;
+   text-align:center;
+  background:#9356DC;
+  border-radius: 50%;
+  border: 1px solid white;
+   
+}
+  
+ .pucenum:after{
+  content: counter(myIndex);
+}
+.howtoo:nth-child(1){
+ top: 10px;
+ left:500px;
+ transition: transform 0.4s;
+}
+.howtoo:nth-child(2){
+ top: 85px;
+ left:500px;
+ transition: transform 0.4s;
+ transition-delay: 0.4s;
+}
+.howtoo:nth-child(3){
+ top: 160px;
+ left:500px;
+ transition: transform 0.4s;
+ transition-delay: 0.8s;
+}
+.boite2:hover .howtoo{
+   transform: translate(-480px,0px);
+}
+
+.howtoo p,.howtoo .fas{opacity:0;
+  transition: opacity 0.8s;
+}
+.boite2:hover .howtoo p, .boite2:hover .howtoo .fas{
+ opacity:1;
+}
+.howtoo:nth-child(1) p,.howtoo:nth-child(1) .fas{
+  transition-delay: 0.5s;
+}
+.howtoo:nth-child(2) p,.howtoo:nth-child(2) .fas{
+  transition-delay: 0.9s;
+}
+.howtoo:nth-child(3) p,.howtoo:nth-child(3) .fas{
+  transition-delay: 1.5s;
+}
+
+.les_coeurs .fas, .les_coeurs .far{
+  color: black;
+  position:absolute;
+  font-size: 1.8rem;
+   right: 30px;
+   bottom: 30px;
+  }
+   .les_coeurs .far{
+       transition:opacity 800ms;
+   }
+    .les_coeurs .fas{
+background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   
+   opacity: 0;
+   transition:opacity 800ms;
+    
+  
+  }
+.les_coeurs .fas:hover{
+      opacity: 1;
+    }
+ 
+ .les_coeurs:hover .far{
+      opacity:0;
+    }
+
+      </style>
+<div class="boite2 petite2">
+  <div class="les_coeurs">
+     <i class="far fa-heart coeur2"></i>
+     <i class="fas fa-heart coeur1"></i>
+    </div>
+  
+</div>
+      
+<div class="boite2 myoverflow">
+  <div class="howtoo"><div class="pucenum"></div><i class="fas fa-mobile-alt"></i><p>Choississez un restaurant</p></div>
+<div class="howtoo"><div class="pucenum"></div><i class="fas fa-list-ul"></i><p>Composez votre menu</p></div>
+<div class="howtoo"><span class="pucenum"></span><i class="fas fa-store"></i><p>Déguster au restaurant</p></div>
+
+
+  
+</div>
+
+<div class="boite2 myoverflow">
+  <div class="howtoo"><div class="pucenum"></div><i class="fas fa-mobile-alt"></i><p>🍺🍣🍪🥧🍒</p></div>
+<div class="howtoo"><div class="pucenum"></div><i class="fas fa-list-ul"></i><p>🐒 🐒 🐒🗿</p></div>
+<div class="howtoo"><span class="pucenum"></span><i class="fas fa-store"></i><p>🍨🍪🍰🥧🍐🍒🍓🥝</p></div>
+
+
+  
+</div>
+
+</section>
+  <section>
+<div class="boite2 ">
+  <div class="rond_ext"></div>
+  <div class="rond_int"></div>
+  <div class="rond"></div>
+</div>
+
+<div class="boite2 ">
+  <div class="rond_ext"></div>
+  <div class="rond_int"></div>
+  <div class="rond taille2"></div>
+</div>
+
+<div class="boite2 ">
+  <div class="rond_ext"></div>
+  <div class="rond_int"></div>
+  <div class="rond taille3"></div>
+</div>
+ 
+  <div class="boite2">
+  <div class="rond quart_vert">
+    
+  </div></div>
+   
+  
+  <div class="boite2 ">
+  
+  <div class="rond_int"></div>
+  <div class="rond taille2"></div>
+  <div class="rond_int position22"></div>
+  <div class="rond taille2 position21"></div>
+</div>
+
+</section>
+<section>
+<div class="boite2 ">
+  <div class="rond_ext"></div>
+  <div class="rond_int loupe">
+    <span class="txt_defil">ohmyfood</span>
+  </div><div class="rond taille3">
+    _______
+  </div> <span class="fish">ohmyfood</span>
+  </div>
+  
+ <div class="boite2 the_flex">
+  <div class="rond_ext"></div>
+  <div class="rond_int loupe ">
+    <span class="txt_defil">Ohmyfood</span>
+  </div><div class="rond taille3"></div>
+ </div>
+ 
+ <div class="boite2 the_flex">
+  <div class="rond_ext"></div>
+  <div class="rond_int loupe ">
+    <span class="emoji_defil the_flex">&#127869; &#127865;🍺🍣🍪🥧🍒</span>
+  </div><div class="rond taille3"></div>
+ </div>
+ 
+ 
+</section>
+ <h2>les JO c'est Vendredi !</h2>
+<section>
+
+
+ <div class="boite2 hauteur250">
+        
+        <div class="cercle_dashed" id="ptit_cercle_1"></div>
+        <div class="cercle_dashed" id="ptit_cercle_2"></div>
+        <div class="cercle_dashed" id="ptit_cercle_3"></div>
+        <div class="cercle_dashed" id="ptit_cercle_4"></div>
+        <div class="cercle_dashed" id="ptit_cercle_5"></div>
+        <C3>🗾</C3>
+        <C3>🎌</C3>
+        <C3>🗻</C3>
+        <C3>🏯</C3>
+
+    </div>
+    <style>
+    .olymp .fas{position:absolute;
+      font-size:48px;
+      transition: transform 1s;
+    }
+    .olymp .fas:nth-child(1){top:30px;left:40px;
+    color:blue}
+    .olymp .fas:nth-child(2){top:64px;left:68px;
+    color:yellow}
+    .olymp .fas:nth-child(3){top:30px;left:100px;
+    color:black}
+    .olymp .fas:nth-child(4){top:64px;left:128px;
+    color:green}
+    .olymp .fas:nth-child(5){top:30px;left:160px;
+    color:red}
+    
+    .boite2:hover .olymp .fas {
+  transform: rotate(1200deg);
+ }
+   </style>
+  <div class="boite2">
+  <div class="olymp">
+     <i class="fas fa-spinner"></i>
+      <i class="fas fa-spinner"></i>
+       <i class="fas fa-spinner"></i>
+        <i class="fas fa-spinner"></i>
+         <i class="fas fa-spinner"></i>
+    
+    </div>
+  </div>
+  <div class="boite2">
+  <div class="olymp">
+   
+     <i class="fas fa-sync-alt"></i>
+      <i class="fas fa-sync-alt"></i>
+       <i class="fas fa-sync-alt"></i>
+        <i class="fas fa-sync-alt"></i>
+         <i class="fas fa-sync-alt"></i>
+    
+   
+    
+    </div>
+  </div>
+  <div class="boite2">
+  <div class="olymp">
+     <i class="fas fa-redo-alt"></i>
+      <i class="fas fa-redo-alt"></i>
+       <i class="fas fa-redo-alt"></i>
+        <i class="fas fa-redo-alt"></i>
+         <i class="fas fa-redo-alt"></i>
+    </div>
+  </div>
+  <div class="boite2">
+  <div class="olymp">
+     <i class="fas fa-recycle"></i>
+      <i class="fas fa-recycle"></i>
+       <i class="fas fa-recycle"></i>
+        <i class="fas fa-recycle"></i>
+         <i class="fas fa-recycle"></i>
+    
+    </div>
+  </div>
+    
+</section>
+<i class="fas fa-spinner"></i>
+
+  🏯🏟🏯⛩⛩🗼🎎
+🎏<c>(Nos plats:🍛🍜🍣🍔🥗🍝🍴 )</c>
+        <c>[Nos desserts:🍨🍪🍰🥧🍐🍒🍓🥝]</c>
+
+
+
+
+
+<section>
+
+  
+  <div class="boite2">
+  <div class=" centre">
+                 
+                   <c1>🍒Oh</c1>
+                   <c1>my</c1>
+                   <c1>food🍒</c1>
+                   
+                </div>
+      <div class="ecran">
+         <c>🍽🍽🍽</c>
+         <c>(nos drink{🍺🍹🍷🥤}</c>
+        
+        <c>(plats:🍛🍜🍣🍔🥗🍝)</c>
+        
+        <c>[desserts:🍨🍪🍰🥧🍐🍒🍓🥝]</c>
+        
+       
+        
+        
+        
+        
+        
+      </div> </div>
+      <div class="boite2">
+      <div class="le_restau3 centre">
+                 
+                   <c1>🍒Oh</c1>
+                   <c1>my</c1>
+                   <c1>food🍒</c1>
+       </div>
+       
+      <div class="ecran">
+         <c2>  🍽   🍽  🍽</c2>
+         <c2>🍷  🍺 🍷</c2>
+         
+         <c2>🍣🍔🥗</c2>
+         
+        
+        
+        
+        
+       </div>
+      </div>
+      <style>
+        .ecran c5{
+          position:absolute;
+          color:#9356DC;
+         height:99px;width:99px;
+         border-radius: 50%;
+         border: 3px solid #9356DC;
+          
+        }
+       #plate2{
+          position:absolute;
+          
+       }
+        
+      </style>
+            
+      <div class="boite2">
+      <div class="le_restau3 centre">
+                 
+                   <c1>🍒Oh</c1>
+                   <c1>my</c1>
+                   <c1>food🍒</c1>
+                   
+                </div>
+      <div class="ecran">
+          <c5></c5>
+          <c5></c5>
+          <div id="plate2"></div>
+        
+       </div>
+      </div>
+      
+</section>
+<section>
+  <div class="boite2">
+    <div class="les_etoiles">
+                  <i class="fas fa-star"></i>
+                 
+                  
+                </div>
+  <div class="les_etoiles">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  
+                  
+                </div>
+  <div class="les_etoiles">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                 
+                  
+                </div>
+  <div class="les_etoiles">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  
+                </div>
+  <div class="les_etoiles">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+    </div>
+    
+    <div class="boite2 boite_inverse">
+  <div class="les_etoiles ">
+                  <i class="fas fa-star"></i>
+                  
+                  
+                </div>
+  <div class="les_etoiles ">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  
+                  
+                </div>
+  <div class="les_etoiles ">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                 
+                  
+                </div>
+  <div class="les_etoiles ">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  
+                </div>
+  <div class="les_etoiles ">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+    </div>
+</section>
+<section>
+  
+  <div class="boite2">
+    <div class="rond13"></div>
+    <div class="rond14"></div>
+<div class="les_etoiles">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+    
+ 
+  </div>
+  <div class="boite2 bocal">
+ 
+<span class="fish">&#128031;</span>
+<span class="fish">&#128031;</span>
+<span class="fish">&#128031;</span>
+<span class="fish">&#128032;</span>
+<span class="fish">&#128032;</span>
+<span class="fish">&#128032;</span>
+<span class="fish">&#128033;</span>
+<span class="fish">&#128033;</span>
+<span class="fish">&#128033;</span>
+
+ </div>
+ 
+   <div class="boite"><h3>Pigeonneau d’Ille-et-Vilaine</h3><div class="plat_checked"><h1><i class="fas fa-check-circle"></i></h1></div></div>
+  
+</section>
+
+</body>
+</html>
