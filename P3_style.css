@@ -64,7 +64,7 @@ h2{
 #le_menu .fa-heart{
   position:absolute;
 }
-#le_menu .les_coeurs{position:relative;}
+#le_menu , #le_menu .les_coeurs{position:relative;}
         
 #info_restau2{ background-color: #F6F6F6;
 text-align: center;
@@ -75,15 +75,19 @@ padding-top:20px;
 #info_restau2 p{
   color:grey;
 }
-
+#info_restau2 h2{
+ font-size: 1.9rem;
+ padding: 0px 30px;
+ 
+}
 .petit_gradiant{
     height: 8px;
     background: linear-gradient(to bottom, #cfcfcf, #eaeaea);
 }
-header img{
+/* header img{
   margin: 0 auto;
   height:28px;
-}
+} */
 #search_initial .fas{
  font-size:1.1rem;
    }
@@ -298,7 +302,8 @@ color: #9356DC;
 
 
 
- #ziresto{width:400px;}
+ #ziresto{
+   max-width:945px;}
  
      
         
@@ -310,17 +315,10 @@ color: #9356DC;
   margin: 0 auto;
   padding: 16px 0px;
   
-  /*padding-top: 3px;
-  padding-left: 30px;
-  margin-left: 30px;
-  text-shadow: 1px 1px white;
-  
-  padding-bottom:2rem;*/
   text-align: center;
   font-size: 1rem;
   color: white;
-  
-   font-family: Roboto;
+  font-family: Roboto;
   box-shadow: 0px 0px 4px #000000;
  /* font-weight: bold;
  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
@@ -338,12 +336,14 @@ color: #9356DC;
 .rubriq h3{
   color:grey;
   width:100%;
-  font-size:1.2rem;
+  font-size:1.1rem;
+  font-weight: 200;
   text-transform: uppercase;
-  border-bottom: 2px solid #99E2D0;
-    width: 50px;
+  width: 100%;
+  /* border-bottom: 2px solid #99E2D0;
+    
   margin: 0px;
-  margin-bottom: 12px;
+  margin-bottom: 12px; */
   
 }
 .new_resto{
@@ -352,9 +352,9 @@ color: #9356DC;
    font-weight: bold;
   top: 20px;
   right: 20px;
-  width: 80px;
-  color: #4c9e8a;
-  font-size: 0.8rem;
+  width: 86px;
+  color: #2c9c81;
+  font-size: 0.9rem;
   text-align: center;
   background:#99E2D0;
   padding: 5px 0px;
@@ -421,7 +421,7 @@ footer li > .fas{
           margin: 15px;
           /*padding: 5px; padding-right: 15px;*/
            height: 50px;
-          min-width: 300px;
+          min-width: 320px;
           border-radius: 10px;
            background: white;
           
@@ -438,6 +438,7 @@ footer li > .fas{
            transition-property: width;
   transition-duration: 0.4s;
          display: inline;
+         width: 60px;
         
         }
         
@@ -451,11 +452,13 @@ footer li > .fas{
  .le_plat:hover .foodinfo, .le_plat:hover .food {
     overflow: hidden;
    white-space: nowrap;
- text-overflow: ellipsis;
+
  
    
  }
- .plat_prix{min-width:40px}
+ .plat_prix{
+   min-width:50px;
+  padding-left: 10px;}
     
   .le_plat:hover .fas{
 
@@ -474,7 +477,10 @@ footer li > .fas{
 font-size: 16px;
 opacity:1;
 }*/
-        
+#le_menu .les_coeurs{
+  top: 20px;
+}  
+  
 .les_coeurs .fas, .les_coeurs .far{
   color: grey;
   position:absolute;
@@ -492,11 +498,7 @@ background: linear-gradient(#9356DC, #FF79DA);
    
    opacity: 0;
    transition:opacity 400ms;
-    
-        
-  /*
-  transition:opacity 400ms;
-  */
+   
   }
 .les_coeurs .fas:hover{
       opacity: 1;
@@ -510,10 +512,10 @@ background: linear-gradient(#9356DC, #FF79DA);
     flex:1;
     align-self: flex-end;
     width:40px;
-    font-size: 16px;color: black; font-weight: bold;
+    font-size: 1.2rem;color: black; font-weight: bold;
   }
   .plat_legende{
-     width:220px;
+     width:300px;
     overflow: hidden;
      
   }
@@ -535,17 +537,33 @@ background: linear-gradient(#9356DC, #FF79DA);
     /*width:0px; transition: width 800ms; */
   }
   
- .tiret{
-   
-  }
+  .tiret{
+    border-top: 2px solid #99E2D0;
+     width: 50px;
+   margin: 0px;
+   margin-top: 19px;
+   }
 
+   #le_menu{
+     position: relative;
+     max-width:945px;
+     top:-40px;
+background-color: white;
+border-radius: 20px 20px 0px 0px;
+
+   }
+  
         
  /*----------------------------------- */
 /*------------ texte------------------ */
  /*----------------------------------- */
  
-.food{font-size: 16px;font-weight: bold; overflow: hidden;}
-.foodinfo{font-size: 14px; overflow: hidden;}
+.food{font-size: 1.1rem;font-weight: bold; overflow: hidden;text-overflow: ellipsis}
+.foodinfo{
+  font-size: 0.95rem; 
+  color: #353232;
+  overflow: hidden;
+  text-overflow: ellipsis}
 .foodprice{font-size: 16px;font-weight: bold;
           
           /*text-align: right;margin-left: 50px;;padding-right: 25px;*/
@@ -553,19 +571,7 @@ background: linear-gradient(#9356DC, #FF79DA);
           }
           
  
-  /*----------------------------------- */
-         /*------------ BAD pour memoire------------------ */
-          /*----------------------------------- */
-          
-        hr {/*a virer*/
-  height:1px;
-  width: 100px;
-  margin: 10px;
-background-color: green;
-
-  }
   
-  /*----------- ajout le 15/07 */
  
    
     

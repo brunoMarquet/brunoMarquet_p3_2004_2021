@@ -1,0 +1,10 @@
+
+body{
+    max-width: 1100px;
+   margin: 0 auto;
+   font-family: 'Roboto', sans-serif;
+   /* background: white;*/
+    font-size: 100%; /* nota bene 100% = 16px  - Ailleurs mettre combien de rem - par ex au lieu de 32px mettre 2rem */
+ font-size: 1em;
+   /* margin-left: 20px;*/
+}
