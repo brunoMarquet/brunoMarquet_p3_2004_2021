@@ -3,43 +3,177 @@
   <head>
    
       <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-       <link rel="icon" href="favicon.ico" />
       
-        <title>ohmyfood nos restaurants</title>
+      
+        <title>Ohmyfood nos restaurants</title>
+     <!--   <script src="https://kit.fontawesome.com/4c9a468499.js" crossorigin="anonymous"></script> -->
         
           <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
           
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Shrikhand&display=swap"
         rel="stylesheet">
-
         
         
-        <link rel="stylesheet" href="P3_style.css">
- <style>
-
-   .spinner{
-   /*  display:none;*/
-   }
-   .fa-spinner:hover {
-     color:blue;
-   }
-
- </style>
+        <link rel="stylesheet" href="../P3_style.css">
+   
 
 
 </head>
-    
+<script>
+  
+
+</script>
+
+ <style>
+.fermer{
+  top: 20px;
+  left:50px; 
+   margin: 10px;
+   border: 2px orange solid;
+ }
+.fermer:hover .spinner{
+  opacity: 0.2;
+  display: none;
+}
+
+    .spinner{
+  
+   }  
+ 
+ .test2{
+   margin:auto 12px;
+   font-size: 1rem;
+ }
+ .test2:hover{
+  color: palevioletred;
+ }
+ .spinner.toto:hover{
+   font-size: larger;
+   color:cadetblue;
+ }
+ .spinner:hover .num1{
+  color: rgb(48, 30, 202);
+ }
+toto:hover i.num2{
+  color: palevioletred;
+ }
+
+.test2:nth-child(1):hover .spinner{
+  color: rgb(238, 28, 39);
+
+}
+.num1{
+  font-size: 5rem;
+  color: goldenrod;
+left: 50%;
+top: 50%;
+}
+.num1:hover {
+  color: black
+}
+.num2:hover{
+  color: blueviolet;
+}
+#parametres{
+  position: inherit;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(153, 192, 207);
+  border: 1px solid rgb(68, 30, 204);
+  margin: 5px;
+  padding: 4px;
+}
+/* #couleur1{
+  width: 20px;
+  height: 20px;
+  border: none;
+
+} */
+input[type="color"] {
+        -webkit-appearance: none;
+        border: none;
+        width: 20px;
+        height: 20px;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+        padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+        border: none;
+}
+</style>  
+<script>
+function my_move(qui){
+    var element2 = document.getElementById(qui);
+    element2.classList.toggle("fa-spin");
+}
+function fermer(){
+  document.getElementById("cache").style.display = "none"
+}
+function coloriser(ki,couleur){
+  alert(couleur);
+}
+
+
+   var myspin1;
+   var myspin2; 
+function le_spinner(truc) {
+ 
+  myspin1=document.getElementById(num1);
+          myspin2=document.getElementById(num2);
+  num1.style.color = 'blue';
+ 
+  var les_class=num1.classList;
+  console.log(les_class);
+  
+ // alert(les_class[1]);
+ var vnum;
+ // vnum=les_class.indexOf('fa-spin');
+  // if (vnum>=0){
+  //   alert("ca tourne");}
+
+ // alert(vnum);
+
+  
+ 
+  }
+
+
+</script> 
     <body>
-      <div class="spinner">
-        <i class="fas fa-spinner fa-spin"></i>
-        <i class="fas fa-spinner fa-pulse num2"></i>
+     
+
+      <div  id ="cache" class="spinner">
+<div id="parametres"> 
+  <span clas="fermer" onclick="fermer()">X</span>
+<span class="les_choix">
+ <i class="fas fa-stroopwafel test2" onclick ="le_spinner('stroopwafel')" ></i>
+ <i class="fas fa-cog test2" onclick ="le_spinner('cog')"></i>
+   <i class="fas fa-circle-notch test2" onclick ="le_spinner('circle-notch')"></i>
+ <i class="fas fa-sun test2"></i>
+ <i class="fas fa-sync test2"></i>
+</span>
+<span>
+n°1:<input type="color" id="couleur1" name="couleur1" value="#ff0000" onchange="coloriser(1,this.value)">
+n°1:<input type="color" id="couleur2" name="couleur2" value="#ff0000" onchange="coloriser(2,this.value)">   </span>
+<span><button onclick="my_move()">vitesse</button></span>
+
+</div>
+       
+        <i class="fas fa-spinner fa-spin" id="num1"></i>
+        <i class="fas fa-spinner fa-pulse" id="num2"></i>
+       
+        <script>
+          
+
+        </script>
+
        <!--  <i class="fas fa-circle-notch fa-spin"></i>
         <i class="fas fa-sync fa-spin"></i>
         <i class="fas fa-cog fa-spin"></i>
         <i class="fas fa-spinner fa-pulse"></i>
         <i class="fas fa-stroopwafel fa-spin"></i> -->
-        
       </div>
      
      
@@ -63,7 +197,7 @@
 <p>Découvrez nos restaurants d'exception, selectionnés par nos soins</p>
 <br/>
 <div class="bt_iconique"><a href="#choixrestaurant">Explorer nos restaurants</a></div>
-<p hidden>toto</p>
+
 </section>
 
 <section id="howtodo">
@@ -84,7 +218,7 @@ rajout des "<p>" comment y acceder-->
 
 
      <article class="restobox"><a href="pages/La_palette_du_gout.html">
-  <div class="cadre_imag"><img src="images/restau1.jpg"  alt="La palette du goût: photo de la table 12"/></div>
+  <div class="cadre_imag"><img src="../images/restau1.jpg"  alt="La palette du goût: photo de la table 12"/></div>
      <div class='new_resto'>Nouveau</div>
   <div class="resto_legende">
     <div class="resto_txt">
@@ -98,7 +232,7 @@ rajout des "<p>" comment y acceder-->
     </div></a>
   </article>
      <article class="restobox"><a href="pages/La_note_enchantee.html">
-  <div class="cadre_imag"><img src="images/restau2.jpg"  alt="le restau ,La_note_enchante à Charonne : photo de Camille ..."/></div>
+  <div class="cadre_imag"><img src="../images/restau2.jpg"  alt="le restau ,La_note_enchante à Charonne : photo de Camille ..."/></div>
      <div class='new_resto'>Nouveau</div>
   <div class="resto_legende">
     <div class="resto_txt">
@@ -112,7 +246,7 @@ rajout des "<p>" comment y acceder-->
     </div></a>
   </article>
      <article class="restobox"><a href="pages/A_la_francaise.html">
-  <div class="cadre_imag"><img src="images/restau3.jpg"  alt="À la française,coyright Sigma"/></div>
+  <div class="cadre_imag"><img src="../images/restau3.jpg"  alt="À la française,coyright Sigma"/></div>
     
   <div class="resto_legende">
     <div class="resto_txt">
@@ -126,7 +260,7 @@ rajout des "<p>" comment y acceder-->
     </div></a>
   </article>
      <article class="restobox"><a href="pages/Le_delice_des_sens.html">
-  <div class="cadre_imag"><img src="images/restau4.jpg"  alt="Le_delice_des_sens- photo de promotion by Fred"/></div>
+  <div class="cadre_imag"><img src="../images/restau4.jpg"  alt="Le_delice_des_sens- photo de promotion by Fred"/></div>
     
   <div class="resto_legende">
     <div class="resto_txt">

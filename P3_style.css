@@ -11,9 +11,10 @@ linear-gradient(#ff79da, #9356dc)
  
 */
         
-
+/* html{height: 100%;} */
 body{
-         max-width: 1100px;
+        /* height: 100%; */
+        max-width: 1100px;
         margin: 0 auto;
         font-family: 'Roboto', sans-serif;
         /* background: white;*/
@@ -25,6 +26,55 @@ body{
 *, *:before, *:after {
   box-sizing: border-box;
 }
+.spinner i{
+  position: fixed;
+  /* top:50%;
+  left:50%; */
+
+
+}
+.fa-spinner{
+  position: fixed;
+   top:calc(50% - 2rem);
+  left:calc(50% - 2rem);
+  /* top:calc(50%-2rem);
+  left:calc(50%-2rem); */
+font-size: 4rem;
+color: #72182b;
+}
+.num2{
+  top:calc(50% - 1rem);
+  left:calc(50% - 1rem);
+  color: #c5cfc5;
+  font-size: 2rem;
+}
+
+
+.spinner{
+  
+  background: grey;
+  /* margin: auto; */
+  position: fixed;
+  top: 0;
+  left: 0; 
+  width: 100%;
+  height: 100% ;
+  
+  opacity: 0.8;
+  animation-name: example;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+ 
+  
+
+}
+@keyframes example {
+  0%   {background-color: rgb(107, 99, 99);}
+  25%  {background-color: rgb(241, 241, 202);}
+  50%  {opacity:0.4;}
+  100% {opacity:0;}
+  /*100% {display:none;}*/
+}
         
         a{
           text-decoration: none;
@@ -35,18 +85,19 @@ body{
         
         
         #loadtransition{
-          position: absolute;
+          /* position: absolute;
           width: 1000px;
-          height: 1000px;
-          background: grey;
+          height: 1000px; 
+          background: grey;*/
         }
 h1{
-       font-family: 'Shrikhand', cursive;
+font-family: 'Shrikhand', cursive;
  font-size: 1.8rem;
- font-weight: 300;
+ font-weight: 500;
+ /* font-style: italic; */
  text-align: center;
-    margin: 0;
-    color: black;  }   
+  margin: 0;
+  color: black;  }   
 
 h4 {
   /* a revoir*/
@@ -59,7 +110,11 @@ h2{
   font-weight: bolder;
   margin-top: 0px;
 }
-
+#header_menu{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
         
 #le_menu .fa-heart{
   position:absolute;
@@ -147,7 +202,7 @@ background:transparent;
 }
 
 .rubriq{
-  display:flex;
+ 
 }
 
       
@@ -242,6 +297,8 @@ color: #9356DC;
     */
    background:#9356DC;
   margin-left: -12px;
+  height: 28px;
+  width: 28px;
   color:white;
    text-align:center;
  border-radius: 50%;
@@ -251,8 +308,9 @@ color: #9356DC;
 }
 
        
-.pucenum:after{
+.pucenum:before{
   content: counter(myIndex);
+ 
 }
         
 .resto_txt {
@@ -304,7 +362,12 @@ color: #9356DC;
 
  #ziresto{
    max-width:945px;}
- 
+
+   #ziresto img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
      
         
  .bt_iconique {
@@ -318,8 +381,8 @@ color: #9356DC;
   text-align: center;
   font-size: 1rem;
   color: white;
-  font-family: Roboto;
-  box-shadow: 0px 0px 4px #000000;
+  font-family: Roboto;#000000;
+  box-shadow: 0px 0px 4px #908e8e;
  /* font-weight: bold;
  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 }
@@ -327,7 +390,7 @@ color: #9356DC;
 
 .bt_iconique:hover{
   opacity:0.9;
-   box-shadow: 0px 0px 8px #000000;
+   box-shadow: 0px 0px 4px #000000;
   /*cursor: pointer;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
@@ -340,8 +403,9 @@ color: #9356DC;
   font-weight: 200;
   text-transform: uppercase;
   width: 100%;
+ pading-left:10px;  
   /* border-bottom: 2px solid #99E2D0;
-    
+ 
   margin: 0px;
   margin-bottom: 12px; */
   
@@ -400,7 +464,7 @@ footer li > .fas{
     
    /*----------FIN footer---------
    -------------------------------
-   -- ddebut pagr menu------------*/
+   -- debut pagr menu------------*/
    
    
    #header
@@ -421,7 +485,7 @@ footer li > .fas{
           margin: 15px;
           /*padding: 5px; padding-right: 15px;*/
            height: 50px;
-          min-width: 320px;
+          max-width: 320px;
           border-radius: 10px;
            background: white;
           
@@ -478,15 +542,15 @@ font-size: 16px;
 opacity:1;
 }*/
 #le_menu .les_coeurs{
-  top: 20px;
+  top: 10px;
 }  
   
 .les_coeurs .fas, .les_coeurs .far{
   color: grey;
   position:absolute;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
    right: 30px;
-   bottom: 30px;
+   bottom: 16px;
   }
    .les_coeurs .far{
        transition:opacity 800ms;
@@ -550,7 +614,21 @@ background: linear-gradient(#9356DC, #FF79DA);
      top:-40px;
 background-color: white;
 border-radius: 20px 20px 0px 0px;
+display:flex;
+flex-wrap: wrap;
 
+
+
+   }
+   #le_menu h2{
+      padding-left:40px;
+      padding-top: 20px;
+     width: 100%;
+    font-family: 'Shrikhand', cursive;
+    font-size: 1.5rem;
+    font-weight:400;
+    
+   
    }
   
         

@@ -1,0 +1,120 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+<style>
+
+.test2{
+    color: rgb(8, 87, 61);
+    font-size: 2rem;
+}
+</style>
+</head>
+<body>
+
+<p>Click sur les "icones svp</p>
+
+<div class="fas fa-stroopwafel " onclick ="le_spinner('fa-stroopwafel')" ></div>
+        <div class="fas fa-cog " onclick ="le_spinner('fa-cog')"></div>
+          <div class="fas fa-circle-notch " onclick ="le_spinner('fa-circle-notch')"></div>
+          <hr>
+        <div id="myDIV2" class="test2"></div>
+          <hr>
+
+<button onclick="my_move(1)">vitesse</button>
+<button onclick="my_propri(6)">modifer class test</button>
+
+   
+    </div>
+
+
+<script>
+     var element2;
+function myFunction() {
+  
+   var element2 = document.getElementById("myDIV2");
+   element2.classList.add("fas");
+   element2.classList.add("fa-circle-notch");
+}
+function le_spinner(la_class){
+   
+    var element2 = document.getElementById("myDIV2");
+    // vnum=element2.classList.indexOf('fas');
+    vnum=element2.classList.length;
+    for(i=0;i<vnum;i++){
+        console.log("val:"+element2.classList.value);
+    }
+    vnum2=element2.classList.value.indexOf('fas');
+    element2.classList=["test2"]; 
+    //ou add("anotherclass");
+   element2.classList.add("fas");
+   element2.classList.add(la_class);
+   console.log( "indexoff:" + vnum2);
+}
+function my_move(quoi){
+    var element2 = document.getElementById("myDIV2");
+    element2.classList.toggle("fa-spin");
+}
+
+function my_move1(quoi){
+    //etait ok
+    var element2 = document.getElementById("myDIV2");
+    if(element2.classList.value.indexOf("fa-spin")==-1){
+    element2.classList.add("fa-spin");}
+    else { element2.classList.remove("fa-spin");}
+
+}
+function my_propri(taille){
+    var element2 = document.getElementById("myDIV2");
+   // alert(element2.classList.contains("test2"));
+   element2.style.color = "blue";
+   element2.style= "border:4px solid red";
+   document.getElementsByClassName("test2")[0].style.borderColor = "black";
+     vv=document.getElementById("myDIV3");
+      vv.classList.add("test2");
+   document.querySelector(".test2").style.borderColor = "blue";
+ 
+  
+   styliser("test3","grey",3);
+}
+   
+   function styliser(id_non,couleur,taille){
+
+vtt="."+id_non+"{color:"+couleur+";font-size:"+taille+"rem;}";
+var sty = document.getElementById("mon_style");
+sty.innerHTML=vtt;
+//alert(vtt)
+}
+</script>
+
+<style id ="mon_style">
+ </style>
+
+</script>
+<hr>
+
+<hr>
+<div id="myDIV3">infos glanées:</div>
+<div class="test3">infos glanées:</div>
+<select name="sample" id="sample" class="fa">
+    <option value="">----</option>
+    <option value="fa-address-card">&#xf2bb;fa-address-card</option>
+    <option value="fa-bell">&#xf0f3;</option>
+    <option value="fa-bookmark">&#xf02e;</option>
+    <option value="fa-building">&#xf1ad;</option>
+</select>
+// si "visible" est défini, le supprimer, sinon, l'ajouter<br>
+div.classList.toggle("visible");<br>
+
+// ajouter/supprimer "visible", en fonction d'un test conditionnel, pour i inférieur à 10<br>
+div.classList.toggle("visible", i < 10 );<br>
+
+console.log(div.classList.contains("foo"));<br>
+<br>//replace( oldClass, newClass ) !Existe<br>
+
+div.classList.add("foo", "bar", "baz");<br>
+div.classList.remove("foo", "bar", "baz")<br>
+https://www.devenir-webmaster.com/V2/TUTO/CHAPITRE/JAVASCRIPT/30-modifier-les-classes/<br>
+
+</body>
+</html>
