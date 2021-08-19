@@ -1,0 +1,153 @@
+<html lang="fr">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <link rel="icon" href="favicon.ico" />
+
+    <title>ohmyfood nos restaurants</title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="local_teddy.js"></script>
+    <script src="p5_script.js"></script>
+    <link rel="stylesheet" href="P5_style.css" />
+
+    <!-- <script src="models/Teddy.js"></script>-->
+  </head>
+
+  <body onload="minit()">
+    <a href="index_teddy.html">
+      <i class="fas fa-arrow-left" id="comeback"></i
+    ></a>
+    <span class="choix_lang" onclick="l_ours.langue=0, edit_ourson()"> FR</span>
+    <span class="choix_lang" onclick="l_ours.langue=1, edit_ourson()"> US</span>
+    <h1>_ Nos ours _ (P5_produits)</h1>
+
+    <div class="erreur">
+      bug
+
+      <p id="demo"></p>
+    </div>
+
+    <p id="produit"></p>
+    <p id="demo_color"></p>
+
+    <style></style>
+
+    <script>
+      var l_ours;
+      function cde_edit() {
+        document.getElementById("commander").innerHTML =
+          l_ours.param_local[l_ours.langue][4];
+      }
+
+      function message_alert(truc) {
+        document.getElementById("message_info").innerHTML = truc;
+        if (truc == "") {
+          document.getElementById("message_info").style.display = "none";
+        } else {
+          document.getElementById("message_info").style.display = "in-line";
+        }
+      }
+
+      function f_ourson() {
+        l_ours = new ours(
+          teddies[i]._id,
+          teddies[i].name,
+          teddies[i].imageUrl,
+          teddies[i].price,
+          teddies[i].description,
+          teddies[i].colors
+        );
+
+        edit_ourson();
+
+        //console.log("infosOOO : "+teddies[i]._id,teddies[i].name,teddies[i].imageUrl,teddies[i].price,teddies[i].description,teddies[i].colors);
+        //editer ours..
+
+        document.getElementById("demo_color").innerHTML =
+          "<br>" + l_ours.edit_color() + "<span id='info_col'></span>";
+
+        //var zi_color= document.getElementById("info_col");
+
+        //pour coloriser
+        //l_array=l_ours.couleurs;
+        //alert(l_ours.couleurs.length)
+
+        nbrc = l_ours.couleurs.length;
+        for (j = 0; j < nbrc; j++) {
+          zi_color = l_ours.couleurs[j];
+          //document.body.style.backgroundColor = "red";
+          aa = document.getElementById("zoneC" + j);
+          aa.style.backgroundColor = zi_color;
+          //aa.addEventListener("click", info_color(zi_color));
+          //addEventListener("mouseout", info_color(""));
+        }
+      }
+
+      function minit() {
+        document.body.style.backgroundColor = "grey";
+
+        koi = document.URL.split("choix=")[1];
+
+        var ourson = koi.toString();
+
+        var tab_ref = [
+          "5be9c8541c9d440000665243",
+          "5beaa8bf1c9d440000a57d94",
+          "beaaa8f1c9d440000a57d95",
+          "beaabe91c9d440000a57d96",
+          "beaacd41c9d440000a57d97",
+        ];
+
+        var id_ours = -1;
+        var tab_ours = [];
+        les_errors = "";
+        nbr = teddies.length;
+
+        for (i = 0; i < nbr; i++) {
+          //vtt+= i+" : "+teddies[i]._id+"<br>";
+          aa = [teddies[i]._id].toString();
+          tab_ours.push[aa];
+
+          // console.log(i + " : "+typeof(teddies[i]._id));
+          //console.log( i+" : "+teddies[i]._id)
+
+          if (teddies[i]._id == ourson) {
+            console.log("YES : " + i);
+            id_ours = i;
+            f_ourson();
+          }
+        }
+
+        vnum2 = tab_ref.indexOf(ourson);
+        les_errors += "indexOf du tabl en dur: " + vnum2 + "<br>";
+
+        vnum = tab_ours.indexOf(ourson);
+        les_errors += "indexOf du tab 2: " + vnum + "<br";
+
+        if (vnum == -1) {
+          // malert(ourson);
+        } else {
+        }
+        console.log(les_errors);
+        document.getElementById("demo").innerHTML = les_errors;
+      }
+    </script>
+
+    <label for="quantity">Quantité (max 5):</label>
+    <input
+      type="number"
+      id="quantity"
+      name="quantity"
+      min="1"
+      max="5"
+      value="1"
+      oninput="l_ours.edit_qte(this.value)"
+    /><br /><br />
+
+    <div id="commander" onclick="l_ours.commander()"></div>
+    <div id="message_info"></div>
+  </body>
+</html>

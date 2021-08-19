@@ -1,0 +1,150 @@
+<html lang="fr">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+    <title></title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="local_teddy.js"></script>
+    <script src="p5_script.js"></script>
+    <link rel="stylesheet" href="P5_style.css" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <script>
+      var la_cde;
+      function une_cde(id, qté, couleur) {
+        this.id = id;
+        this.qte = qté;
+        this.couleur = couleur;
+        console.log("toto:" + this.id);
+
+        this.edit = function () {
+          return (
+            "réf : " +
+            this.id +
+            "<br> qte " +
+            this.qte +
+            "<br>couleur " +
+            this.couleur
+          );
+        };
+
+        console.log("titi:" + this.edit());
+      }
+
+      const date = new Date();
+
+      function minit_form() {
+        koi = document.URL.split("@");
+
+        ki = koi[1] + " <br> " + parseInt(koi[2]) + " <br> " + parseInt(koi[3]);
+        la_cde = une_cde(koi[1], koi[2], koi[3]);
+
+        document.getElementById("demo").innerHTML =
+          ki + "<br>  " + date.toString() + "<br>" + date.getTime();
+      }
+    </script>
+
+    <style></style>
+  </head>
+
+  <body onload="minit_form()">
+    <header>
+      <!-- Header -->
+
+      <nav>
+        <a href="">Accueil</a>
+        <a href="#" class="">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <h1>votre commande</h1>
+      <p id="demo"></p>
+      <hr />
+
+      <form action="" method="post">
+        <input type="hidden" value="345" id="temps" />
+        <label for="lastName" class="">
+          Nom :
+          <input
+            type="text"
+            id="lastName"
+            class="form-control"
+            value="abc"
+            required
+          />
+        </label>
+        <label for="firstName">
+          Prénom :
+          <input
+            type="text"
+            id="firstName"
+            class="form-control"
+            value="abc"
+            required
+          />
+        </label>
+        <label for="email">
+          Adresse Mail :
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            value="@gmail.com"
+            required
+          />
+        </label>
+        <label for="adress">
+          Adresse :
+          <input
+            type="text"
+            id="address"
+            class="form-control"
+            value="Paris"
+            required
+          />
+        </label>
+        <label for="city">
+          Code Postal :
+          <input
+            type="text"
+            id="city"
+            class="form-control"
+            value="75000"
+            required
+          />
+        </label>
+        <button
+          type="submit"
+          class="col btn btn-primary justify-content-center"
+          id="submit"
+        >
+          Valider la commande
+        </button>
+      </form>
+    </main>
+    <!--fin main"-->
+
+    <!-- Footer -->
+    <footer>
+      <a class="social" href="index.html"
+        ><i class="fab fa-twitter icon_md"></i
+      ></a>
+      <a class="social" href="index.html"
+        ><i class="fab fa-facebook-f icon_md"></i
+      ></a>
+      <a class="social" href="index.html"
+        ><i class="fab fa-dribbble icon_md"></i
+      ></a>
+      <a class="social" href="index.html"
+        ><i class="fab fa-instagram icon_md"></i
+      ></a>
+    </footer>
+  </body>
+</html>

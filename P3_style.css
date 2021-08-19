@@ -80,20 +80,20 @@ body {
   25% {
     background-color: rgb(177, 177, 132);
   }
-  75% {
-    opacity: 0.4;
+  100% {
+    opacity: 0;
     left: 25%;
     width: 50%;
     top: 25%;
     height: 50%;
   }
-  100% {
+  /*   100% {
     opacity: 0;
     left: 45%;
     width: 10%;
     top: 45%;
     height: 10%;
-  }
+  } */
 
   /* width: 0%;
     height: 0% ; */
@@ -504,7 +504,7 @@ footer li > .fas {
   counter-increment: i_plat;
   /* margin: 15px;
           padding: 5px; padding-right: 15px;*/
-  height: 10px;
+
   max-width: 320px;
   border-radius: 10px;
   background: white;
@@ -513,26 +513,22 @@ footer li > .fas {
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
 }
-.rubriq :nth-child(2) {
+/* .rubriq .article:nth-child(2) {
+  animation-delay: 0.2s;
+} */
+.le_plat:nth-of-type(2) {
   animation-delay: 0.2s;
 }
-.le_plat :nth-child(3) {
+.le_plat:nth-of-type(3) {
   animation-delay: 0.4s;
 }
 
 @keyframes menu {
-  0% {
-    height: 10px;
+  from {
+    opacity: 0;
   }
-  25% {
-    opacity: 0.4;
-  }
-  75% {
-    opacity: 08;
-  }
-  100% {
+  to {
     opacity: 1;
-    height: 42px;
   }
 }
 
@@ -669,12 +665,15 @@ le_plat:hover .fas {
   font-size: 1.1rem;
   font-weight: bold;
   overflow: hidden;
+  white-space: nowrap;
+
   text-overflow: ellipsis;
 }
 .foodinfo {
   font-size: 0.95rem;
   color: #353232;
   overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
 }
 .foodprice {

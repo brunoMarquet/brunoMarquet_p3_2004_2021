@@ -1,0 +1,136 @@
+<html lang="fr">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <link rel="icon" href="favicon.ico" />
+
+    <title></title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="local_teddy.js"></script>
+    <script src="p5_script.js"></script>
+    <link rel="stylesheet" href="P5_style.css" />
+    <!-- <script src="models/Teddy.js"></script>-->
+  </head>
+
+  <body>
+    <h2>Bienvenue sur Orinoco Site de commerce en ligne</h2>
+
+    <h1>P5 : _ Nos ours _</h1>
+    <p>date</p>
+
+    <section id="section"></section>
+
+    <p id="style_color_case"></p>
+    <p id="demo2uu"></p>
+
+    <script>
+      // 2 couleurs non reconnues changées en "brown", et "sienna" pour Arnold!,
+
+      // ???
+
+      var path = "models/";
+      var path_1 = path + "Teddy.js";
+      var transistion_image = 1;
+      var tableau_pub = [
+        "je t'aime déja!",
+        "tu me fait craquer",
+        "inséparables, on en croque",
+        "on a les memes génes",
+        "promis on est compatible!",
+      ];
+
+      var nbr = teddies.length;
+      var vtt = "";
+      var vt_css2 = "";
+
+      var vt_css = "<style>\n"; // class css des color
+
+      for (i = 0; i < nbr; i++) {
+        var vt_css3 = "";
+        vt_cc = ""; // html color
+
+        nom = teddies[i].name;
+        num = teddies[i]._id;
+        legende = teddies[i].description;
+        prix = teddies[i].price / 100;
+        image = "images/" + teddies[i].imageUrl;
+        vcolor = teddies[i].colors;
+        nbrc = vcolor.length;
+
+        if (transistion_image == 1) {
+          vt_css3 +=
+            `<div class="pub1">mon matricule c'est le :` +
+            num +
+            `</div>
+      <div class="pub2">tu peux m'appeler ` +
+            nom +
+            `</div>
+       <div class="pub3">` +
+            tableau_pub[i] +
+            `</div>
+      <div class="pub4">parole d'🐻 </div>
+      `;
+
+          //console.log(vt_css3)
+        }
+
+        //<div class='container_color_case'>";
+        for (j = 0; j < nbrc; j++) {
+          zi_color = vcolor[j];
+          vt_cc +=
+            ` <div class="color_case" id="z` + i + `_` + j + `"></div>\n`;
+
+          vt_css += `#z` + i + `_` + j + `{background:` + zi_color + `;}\n`;
+        }
+        vt_css += `#cc_` + i + ` {width: ` + (45 + 8 * nbrc) + `%;}\n`;
+
+        //vt_css2 += `#zcc_`+i+`{width:`+(20+(j*25))+` px;}\n`;
+
+        vtt +=
+          `<article id="article_` +
+          i +
+          `"><a href="produit.html?choix=` +
+          num +
+          `">
+            <div class="cadrephoto" id="photo_` +
+          i +
+          `">
+            <img src="` +
+          image +
+          `" alt="` +
+          nom +
+          `">` +
+          vt_css3 +
+          `</div>
+                 <h3>` +
+          nom +
+          `</h3>
+                  <p>` +
+          legende +
+          `</p>
+                  <h4>` +
+          prix +
+          `€  </h4></a>
+                 <div class="choix_color" id="cc_` +
+          i +
+          `"> Nos coloris disponible(s): ` +
+          vt_cc +
+          `
+
+        </div></article>
+
+        `;
+      }
+      // css de
+      vt_css += vt_css2 + "</style>\n";
+
+      //
+      document.getElementById("section").innerHTML = vtt;
+      document.getElementById("style_color_case").innerHTML = vt_css;
+      console.log(vtt);
+    </script>
+  </body>
+</html>
