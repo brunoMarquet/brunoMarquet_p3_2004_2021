@@ -15,6 +15,8 @@ linear-gradient(#ff79da, #9356dc)
 :root {
   --rose1: #9356dc;
   --rose2: #ff79da;
+  --largeur_max: 945;
+  --footer_color: rgb(168, 255, 155);
   --delais: 0.2;
   --taille_1: 4rem;
   --taille_2: 2rem;
@@ -22,7 +24,7 @@ linear-gradient(#ff79da, #9356dc)
 
 body {
   /* height: 100%; */
-  max-width: 1100px;
+  max-width: var(--largeur_max);
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
   /* background: white;*/
@@ -141,14 +143,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-}
-
-#le_menu .fa-heart {
-  position: absolute;
-}
-#le_menu,
-#le_menu .les_coeurs {
-  position: relative;
+  padding-bottom: 10px;
 }
 
 #info_restau2 {
@@ -232,6 +227,7 @@ h2 {
 }
 
 .rubriq {
+  /* padding-top: 10px;*/
   /* counter-increment: myIndex_plat; */
 }
 
@@ -305,17 +301,13 @@ nav {
 }
 
 .howtoo:hover .fas {
-  color: #9356dc;
+  color: var(--rose1);
 }
 
 .pucenum {
   position: relative;
-  /* absolu   counter-increment: myIndex;
-     padding: 2px;
-      padding-top: 8px;
-      padding-top: 6px; padding: 8px 3px;font-size: 0.4em;
-    */
-  background: #9356dc;
+
+  background: var(--rose1);
   margin-left: -12px;
   height: 28px;
   width: 28px;
@@ -369,7 +361,7 @@ nav {
 }
 
 #ziresto {
-  max-width: 945px;
+  max-width: var(--largeur_max);
 }
 
 #ziresto img {
@@ -389,7 +381,7 @@ img#ziresto {
 .bt_iconique {
   width: 225px;
   border-radius: 25px;
-  background: linear-gradient(170deg, #ff79da, #9356dc);
+  background: linear-gradient(170deg, var(--rose2), var(--rose1));
   margin: 0 auto;
   padding: 16px 0px;
 
@@ -417,12 +409,9 @@ img#ziresto {
   font-size: 1.1rem;
   font-weight: 200;
   text-transform: uppercase;
-  width: 100%;
-  padding-left: 10px;
-  /* border-bottom: 2px solid #99E2D0;
- 
-  margin: 0px;
-  margin-bottom: 12px; */
+  margin-top: 20px;
+
+  padding-bottom: 6px;
 }
 .new_resto {
   /*flyer news*/
@@ -438,38 +427,36 @@ img#ziresto {
   padding: 5px 0px;
 }
 
+/*----------footer--------- */
 footer {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
+  margin-top: 50px;
+  /* display: flex;
+  flex-wrap: wrap; */
   background: #313231;
   padding: 20px;
-  /*position:absolute; */
-  bottom: 0px;
+  /*bottom: 0px;*/
   color: white;
 }
+
 footer p {
   font-size: 1.2rem;
   font-family: "Shrikhand", cursive;
-  width: 100%;
-  margin-bottom: 5px;
+  /*  width: 100%; */
+  height: 35px;
 }
-
-/*----------footer--------- */
-
 footer li {
   list-style-type: none;
-  padding: 5px 0px;
+  padding: 5px 20px;
 }
 
 footer li:hover {
-  color: rgb(168, 255, 155);
+  color: var(--footer_color);
   cursor: pointer;
 }
 
 /* obliger de redefinir i:hover a !! */
 footer li:hover a {
-  color: rgb(168, 255, 155);
+  color: var(--footer_color);
 }
 
 footer li > .fas {
@@ -494,16 +481,15 @@ footer li > .fas {
   color: var(--rose1);
 }
 
-.le_plat:before {
+/* .le_plat:before {
   content: counter(i_plat);
   font-size: 6px;
-}
+} */
 
 .le_plat {
   display: flex;
-  counter-increment: i_plat;
-  /* margin: 15px;
-          padding: 5px; padding-right: 15px;*/
+  margin-top: 8px;
+  /* margin-left: calc(50% - 160px); */
 
   max-width: 320px;
   border-radius: 10px;
@@ -513,9 +499,7 @@ footer li > .fas {
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
 }
-/* .rubriq .article:nth-child(2) {
-  animation-delay: 0.2s;
-} */
+
 .le_plat:nth-of-type(2) {
   animation-delay: 0.2s;
 }
@@ -544,16 +528,11 @@ footer li > .fas {
   width: 60px;
 }
 
-le_plat:hover .fas {
+le_plat:hover i {
   display: inline;
-  /*size:3rem;*/
+  transform: rotate(270deg);
 }
 
-.le_plat:hover .foodinfo,
-.le_plat:hover .food {
-  overflow: hidden;
-  white-space: nowrap;
-}
 .plat_prix {
   min-width: 50px;
   padding-left: 10px;
@@ -564,12 +543,7 @@ le_plat:hover .fas {
 }
 
 .titre_resto {
-  /*DEBUG marchaut en ndyn en MAI !!!!!*/
   position: relative;
-}
-
-#le_menu .les_coeurs {
-  top: 0px;
 }
 
 .les_coeurs .fas,
@@ -599,7 +573,6 @@ le_plat:hover .fas {
   opacity: 0;
 }
 .plat_prix {
-  /*  border: 1pX dotted grey;*/
   flex: 1;
   align-self: flex-end;
   width: 40px;
@@ -617,44 +590,43 @@ le_plat:hover .fas {
 }
 
 .plat_checked {
-  display: none;
-  /*opacity:0;*/
-  background-color: #99e2d0;
+  display: flex;
+
   text-align: center;
-  padding: 0px;
 
-  height: 100%;
+  padding-top: 16px;
+  /*calc(50% - 1.8rem);*/
+
+  width: 0%;
+  background-color: #99e2d0;
   border-radius: 0 10px 10px 0;
-
-  /*width:0px; transition: width 800ms; */
 }
 
 .tiret {
   border-top: 2px solid #99e2d0;
   width: 50px;
+  padding-bottom: 16px;
 
-  margin-left: 12px;
-  margin-top: 15px;
+  margin-top: 5px;
 }
-
-#le_menu {
+.haut_page {
   position: relative;
-  max-width: 945px;
-  top: -40px;
+
+  top: -20px;
   background-color: white;
-  border-radius: 20px 20px 0px 0px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  border-radius: 40px;
 }
-#le_menu h2 {
-  /* display: inline; */
-  padding-left: 40px;
+.haut_page h2 {
+  padding-left: 80px;
   padding-top: 20px;
-  width: 100%;
+
   font-family: "Shrikhand", cursive;
   font-size: 1.5rem;
   font-weight: 400;
+}
+
+#le_menu {
+  margin-left: calc(50% - 160px);
 }
 
 /*----------------------------------- */
@@ -666,8 +638,8 @@ le_plat:hover .fas {
   font-weight: bold;
   overflow: hidden;
   white-space: nowrap;
-
   text-overflow: ellipsis;
+  padding: 8px 0;
 }
 .foodinfo {
   font-size: 0.95rem;
@@ -675,10 +647,22 @@ le_plat:hover .fas {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  padding-bottom: 6px;
 }
 .foodprice {
   font-size: 1.2rem;
   font-weight: bold;
+  margin-bottom: 6px;
+  margin-right: 6px;
 
   /*text-align: right;margin-left: 50px;;padding-right: 25px;*/
+}
+
+.le_plat i {
+  /* position: relative; */
+  color: #fff;
+  font-size: 1.3rem;
+  transition-property: transform;
+  transition-duration: 0.4s;
+  transition-delay: 0.2s;
 }
