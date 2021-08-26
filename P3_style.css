@@ -1,17 +1,3 @@
-/*
-#F2F2F2;
-#efe8f7
-#99E2D0 bleu vert
-linear-gradient(#ff79da, #9356dc)
- resources linear-gradient : https://css-tricks.com/gradient-borders-in-css/
- 
- resources svg loader:  https://css-tricks.com/my-struggle-to-use-and-animate-a-conic-gradient-in-svg/https://www.useragentman.com/blog/2013/03/03/animating-circular-paths-using-css3-transitions/
- 
- https://www.useragentman.com/blog/2013/03/03/animating-circular-paths-using-css3-transitions/
- 
-*/
-
-/* html{height: 100%;} */
 :root {
   --rose1: #9356dc;
   --rose2: #ff79da;
@@ -84,10 +70,10 @@ body {
   }
   100% {
     opacity: 0;
-    left: 25%;
-    width: 50%;
-    top: 25%;
-    height: 50%;
+    left: 50%;
+    width: 0%;
+    top: 50%;
+    height: 0%;
   }
   /*   100% {
     opacity: 0;
@@ -123,10 +109,11 @@ h1 {
   font-family: "Shrikhand", cursive;
   font-size: 1.8rem;
   font-weight: 500;
-  /* font-style: italic; */
+
   text-align: center;
   margin: 0;
   color: black;
+  padding-bottom: 12px;
 }
 
 h4 {
@@ -173,12 +160,18 @@ h2 {
 }
 
 #search_initial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #eaeaea;
   /* height: 25px; */
   padding: 16px;
   margin-bottom: 0px;
-  text-align: center;
+
   font-size: 2rem;
+}
+.interval {
+  height: 50px;
 }
 
 ::-webkit-input-placeholder {
@@ -315,7 +308,7 @@ nav {
   text-align: center;
   border-radius: 50%;
   border: 1px solid white;
-  padding: 3px 8px 3px 8px;
+  padding: 5px 8px 3px 8px;
 }
 
 .pucenum:before {
@@ -323,10 +316,12 @@ nav {
 }
 
 .resto_txt {
+  position: relative;
   margin-left: 24px;
   color: black;
 }
 .resto_txt p {
+  position: relative;
   color: grey;
   font-size: 1.1rem;
   margin-top: -16px;
@@ -377,12 +372,18 @@ img#ziresto {
   width: 100%;
   height: auto;
 }
-
+.bt_position1 {
+  margin: 0 auto;
+}
+.bt_position2 {
+  /* margin-left=calc((320 - 225)* 0.5);*/
+  margin-left: 48px;
+}
 .bt_iconique {
   width: 225px;
   border-radius: 25px;
   background: linear-gradient(170deg, var(--rose2), var(--rose1));
-  margin: 0 auto;
+
   padding: 16px 0px;
 
   text-align: center;
@@ -539,11 +540,15 @@ le_plat:hover i {
 }
 
 .le_plat:hover .fas {
-  transform: rotate(90deg);
+  transform: rotate(360deg);
 }
 
 .titre_resto {
   position: relative;
+}
+.resto_legende i {
+  right: 30px;
+  bottom: 16px;
 }
 
 .les_coeurs .fas,
@@ -551,8 +556,6 @@ le_plat:hover i {
   color: grey;
   position: absolute;
   font-size: 1.5rem;
-  right: 30px;
-  bottom: 16px;
 }
 .les_coeurs .far {
   transition: opacity 800ms;
@@ -607,7 +610,7 @@ le_plat:hover i {
   width: 50px;
   padding-bottom: 16px;
 
-  margin-top: 5px;
+  margin-top: -16px;
 }
 .haut_page {
   position: relative;
@@ -624,9 +627,14 @@ le_plat:hover i {
   font-size: 1.5rem;
   font-weight: 400;
 }
+.haut_page i {
+  right: 40px;
+  top: 20px;
+}
 
 #le_menu {
-  margin-left: calc(50% - 160px);
+  margin-left: calc(50% - 152px);
+  /*on decalle de 8 vers la droite*/
 }
 
 /*----------------------------------- */

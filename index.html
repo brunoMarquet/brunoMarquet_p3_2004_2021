@@ -1,7 +1,6 @@
 <html lang="fr">
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-   
 
     <title>ohmyfood nos restaurants</title>
 
@@ -15,16 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Shrikhand&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="reset.css" />
+    <!-- <link rel="stylesheet" href="reset.css" /> -->
     <link rel="stylesheet" href="P3_style.css" />
-    <style>
-      .spinner {
-        /* display:none; */
-      }
-      .fa-spinner:hover {
-        color: blue;
-      }
-    </style>
   </head>
 
   <body>
@@ -41,27 +32,25 @@
     <!-- <div class="loadtransition"></div> -->
     <header>
       <h1>ohmyfood</h1>
-    </header>
-    <div class="petit_gradiant"></div>
 
-    <form role="search" id="search_initial">
-      <i class="fas fa-map-marker-alt"> </i>
-      <input
-        id="search_restau"
-        aria-label="Chercher un restaurant"
-        placeholder="Paris, Belleville"
-        type="text"
-      />
-    </form>
-    <main>
+      <div class="petit_gradiant"></div>
+
+      <form role="search" id="search_initial">
+        <i class="fas fa-map-marker-alt"> </i>
+        <input
+          id="search_restau"
+          aria-label="Chercher un restaurant"
+          placeholder="Paris, Belleville"
+          type="text"
+        />
+      </form>
       <section id="info_restau2">
         <h2>Réservez le menu qui vous convient</h2>
         <p>Découvrez nos restaurants d'exception, selectionnés par nos soins</p>
         <br />
-        <div class="bt_iconique">
+        <div class="bt_iconique bt_position1">
           <a href="#choixrestaurant">Explorer nos restaurants</a>
         </div>
-        <p hidden>toto</p>
       </section>
 
       <section id="howtodo">
@@ -84,96 +73,90 @@ rajout des "<p>" comment y acceder-->
           <p>Dégustez au restaurant</p>
         </div>
       </section>
+    </header>
+    <main id="choixrestaurant">
+      <h2>Restaurants</h2>
 
-      <section id="choixrestaurant">
-        <h2>Restaurants</h2>
+      <!--édité le 13/07/2021, 22:35:44-->
 
-        <!--édité le 13/07/2021, 22:35:44-->
-
-        <article class="restobox">
-          <a href="pages/La_palette_du_gout.html">
-            <div class="cadre_imag">
-              <img
-                src="images/restau1.jpg"
-                alt="La palette du goût: photo de la table 12"
-              />
+      <article class="restobox">
+        <a href="pages/La_palette_du_gout.html">
+          <div class="cadre_imag">
+            <img
+              src="images/restau1.jpg"
+              alt="La palette du goût: photo de la table 12"
+            />
+          </div>
+          <div class="new_resto">Nouveau</div>
+          <div class="resto_legende">
+            <div class="resto_txt">
+              <h3>La palette du goût</h3>
+              <p>Ménilmontant</p>
             </div>
-            <div class="new_resto">Nouveau</div>
-            <div class="resto_legende">
-              <div class="resto_txt">
-                <h3>La palette du goût</h3>
-                <p>Ménilmontant</p>
-              </div>
-              <div class="les_coeurs">
-                <i class="far fa-heart coeur2"></i>
-                <i class="fas fa-heart coeur1"></i>
-              </div></div
-          ></a>
-        </article>
-        <article class="restobox">
-          <a href="pages/La_note_enchantee.html">
-            <div class="cadre_imag">
-              <img
-                src="images/restau2.jpg"
-                alt="le restau ,La_note_enchante à Charonne : photo de Camille ..."
-              />
+            <div class="les_coeurs">
+              <i class="far fa-heart coeur2"></i>
+              <i class="fas fa-heart coeur1"></i>
+            </div></div
+        ></a>
+      </article>
+      <article class="restobox">
+        <a href="pages/La_note_enchantee.html">
+          <div class="cadre_imag">
+            <img
+              src="images/restau2.jpg"
+              alt="le restau ,La_note_enchante à Charonne : photo de Camille ..."
+            />
+          </div>
+          <div class="new_resto">Nouveau</div>
+          <div class="resto_legende">
+            <div class="resto_txt">
+              <h3>La note enchantée</h3>
+              <p>Charonne</p>
             </div>
-            <div class="new_resto">Nouveau</div>
-            <div class="resto_legende">
-              <div class="resto_txt">
-                <h3>La note enchantée</h3>
-                <p>Charonne</p>
-              </div>
-              <div class="les_coeurs">
-                <i class="far fa-heart coeur2"></i>
-                <i class="fas fa-heart coeur1"></i>
-              </div></div
-          ></a>
-        </article>
-        <article class="restobox">
-          <a href="pages/A_la_francaise.html">
-            <div class="cadre_imag">
-              <img
-                src="images/restau3.jpg"
-                alt="À la française,coyright Sigma"
-              />
+            <div class="les_coeurs">
+              <i class="far fa-heart coeur2"></i>
+              <i class="fas fa-heart coeur1"></i>
+            </div></div
+        ></a>
+      </article>
+      <article class="restobox">
+        <a href="pages/A_la_francaise.html">
+          <div class="cadre_imag">
+            <img src="images/restau3.jpg" alt="À la française,coyright Sigma" />
+          </div>
+
+          <div class="resto_legende">
+            <div class="resto_txt">
+              <h3>À la française</h3>
+              <p>Cité Rouge</p>
             </div>
+            <div class="les_coeurs">
+              <i class="far fa-heart coeur2"></i>
+              <i class="fas fa-heart coeur1"></i>
+            </div></div
+        ></a>
+      </article>
+      <article class="restobox">
+        <a href="pages/Le_delice_des_sens.html">
+          <div class="cadre_imag">
+            <img
+              src="images/restau4.jpg"
+              alt="Le_delice_des_sens- photo de promotion by Fred"
+            />
+          </div>
 
-            <div class="resto_legende">
-              <div class="resto_txt">
-                <h3>À la française</h3>
-                <p>Cité Rouge</p>
-              </div>
-              <div class="les_coeurs">
-                <i class="far fa-heart coeur2"></i>
-                <i class="fas fa-heart coeur1"></i>
-              </div></div
-          ></a>
-        </article>
-        <article class="restobox">
-          <a href="pages/Le_delice_des_sens.html">
-            <div class="cadre_imag">
-              <img
-                src="images/restau4.jpg"
-                alt="Le_delice_des_sens- photo de promotion by Fred"
-              />
+          <div class="resto_legende">
+            <div class="resto_txt">
+              <h3>Le délice des sens</h3>
+              <p>Folie-Méricourt</p>
             </div>
-
-            <div class="resto_legende">
-              <div class="resto_txt">
-                <h3>Le délice des sens</h3>
-                <p>Folie-Méricourt</p>
-              </div>
-              <div class="les_coeurs">
-                <i class="far fa-heart coeur2"></i>
-                <i class="fas fa-heart coeur1"></i>
-              </div></div
-          ></a>
-        </article>
-        <!--fin édition-->
-      </section>
-
-      <!--partie commune  -->
+            <div class="les_coeurs">
+              <i class="far fa-heart coeur2"></i>
+              <i class="fas fa-heart coeur1"></i>
+            </div></div
+        ></a>
+      </article>
+      <!--fin édition-->
     </main>
 
     <footer>
