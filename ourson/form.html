@@ -10,29 +10,28 @@
     />
     <script src="local_teddy.js"></script>
     <script src="p5_script.js"></script>
-    <link rel="stylesheet" href="P5_style.css" />
+    <link rel="stylesheet" href="ourson.css" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
 
     <script>
+      // document.addEventListener("DOMContentLoaded", minit_form());
+
       var la_cde;
-      function une_cde(id, qté, couleur) {
+
+      function Une_cde(id, qté, couleur) {
         this.id = id;
         this.qte = qté;
         this.couleur = couleur;
-        console.log("toto:" + this.id);
+        //console.log(${this.id} );
+        let x = 15;
+        //console.log("hello world " + x + " times");
+        //console.log(`hello world ${x} times `);
 
         this.edit = function () {
-          return (
-            "réf : " +
-            this.id +
-            "<br> qte " +
-            this.qte +
-            "<br>couleur " +
-            this.couleur
-          );
+          return `réf : ${this.id} <br> qte : ${this.qte} <br>couleur : ${this.couleur} `;
         };
 
         console.log("titi:" + this.edit());
@@ -44,7 +43,7 @@
         koi = document.URL.split("@");
 
         ki = koi[1] + " <br> " + parseInt(koi[2]) + " <br> " + parseInt(koi[3]);
-        la_cde = une_cde(koi[1], koi[2], koi[3]);
+        la_cde = Une_cde(koi[1], koi[2], koi[3]);
 
         document.getElementById("demo").innerHTML =
           ki + "<br>  " + date.toString() + "<br>" + date.getTime();

@@ -3,7 +3,7 @@ function edit_ourson() {
   cde_edit();
 }
 
-function ours(id, nom, image, prix, legende, couleurs) {
+function Ours(id, nom, image, prix, legende, couleurs) {
   this.langue = 1;
   this.param_local = [
     [
@@ -40,37 +40,16 @@ function ours(id, nom, image, prix, legende, couleurs) {
       //[choix_couleur];
     }
 
-    return (
-      `<article id="">
+    return `<article id="">
   <div class="cadrephoto">
-  <img src="` +
-      this.image +
-      `" alt="` +
-      this.nom +
-      `"></div>
-       <h3>` +
-      this.nom +
-      `</h3>
-        <p>` +
-      this.legende +
-      `</p>
-        
-        <p id="nbr_prod">` +
-      this.param_local[this.langue][0] +
-      this.qty +
-      `</p>
-         <p id="c_color">` +
-      this.param_local[this.langue][1] +
-      v1 +
-      `</p>
-         <p id="case_color_a"></p>
-         
-         <p id="c_price">` +
-      this.param_local[this.langue][2] +
-      this.prix +
-      ` €.</p>
-       </article>`
-    );
+  <img src="${this.image}" alt=${this.nom}"></div>
+       <h3>${this.nom}</h3>
+<p> ${this.legende} </p>
+        <p id="nbr_prod">${this.param_local[this.langue][0]} ${this.qty}</p>
+         <p id="c_color">${this.param_local[this.langue][1]} ${v1} </p>
+      <p id="case_color_a"></p>
+         <p id="c_price">${this.param_local[this.langue][2]}${this.prix}€.</p>
+       </article>`;
   };
 
   this.choix_color = function (koi) {
@@ -85,14 +64,10 @@ function ours(id, nom, image, prix, legende, couleurs) {
       //zi_color = this.couleurs[j];
       // vtt +=` <div class="color_case2" id="zoneC`+j+`" onmouseover="l_ours.info_color(`+j+`)" ></div>\n`;
 
-      vtt +=
-        ` <div class="color_case2" id="zoneC` +
-        j +
-        `" onmouseover="l_ours.info_color(` +
-        j +
-        `)" onclick="l_ours.choix_color(` +
-        j +
-        `)" ></div>\n`;
+      vtt += ` <div class="color_case2" id="zoneC${j}" 
+        onmouseover="l_ours.info_color(${j})" 
+        onclick="l_ours.choix_color(${j})" ></div>\n`;
+
       //console.log(vtt);
 
       //<div class="color_name"></div>`+this.couleurs[j]+`
@@ -130,14 +105,11 @@ function ours(id, nom, image, prix, legende, couleurs) {
     if (this.choix_couleur == -1) {
       message_alert(this.param_local[this.langue][3]);
     } else {
+      this.valid_cde();
       //window.location='form.html?choix='+this.id+'&qty='+this.qty+'&color='+this.choix_couleur;
-      window.location =
-        "form.html?choix@" +
-        this.id +
-        "@" +
-        this.qty +
-        "@" +
-        this.choix_couleur;
     }
+  };
+  this.valid_cde = function () {
+    window.location = `form.html?choix@${this.id}@${this.qty}@${this.choix_couleur}`;
   };
 }

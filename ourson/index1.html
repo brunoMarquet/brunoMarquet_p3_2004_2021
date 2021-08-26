@@ -1,0 +1,290 @@
+<html lang="fr">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+    <title></title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="local_teddy.js"></script>
+    <script src="p5_script.js"></script>
+    <link rel="stylesheet" href="ourson.css" />
+    <!-- <script src="models/Teddy.js"></script>-->
+  </head>
+  <style>
+    .intro_choix{
+      display:flex;
+      gap: 20px;
+    }
+    .puce_info {
+      background: #a9a7cc;
+    text-align: center;
+    font-size: 24px;
+      border-radius: 16%;
+      border: 1px solid rgb(36, 34, 34);
+      padding: 3px 8px 3px 8px;
+
+    }
+
+   .puce_info:hover{cursor: pointer;}
+
+   .puce_info:hover .info1{
+
+    visibility: visible;
+   }
+
+    .info1 {
+      border-top: darkblue solid 2px;
+      font-size: 18px;
+     width: 400 px;
+     visibility: hidden;
+    }
+    /*  prov */
+    .la_case_color{
+        display: inline;
+        border: 2px solid green;
+        padding: 10px;
+        height: 20px;
+        width: 20px;
+      
+      }
+      .prix3 {
+        font-size: 20px;
+        text-align: center;
+        width: 140;
+        border-radius: 16px;
+        background-color: rgb(219, 166, 68);
+       
+      }
+      .prix2 {
+        font-size: 20px;
+        background-color: rgb(240, 209, 69);
+        text-align: center;
+      }
+  </style>
+
+  <body onload="init_prod(0)">
+    <header>
+      <h2>Bienvenue sur Orinoco Site de commerce en ligne</h2>
+
+      <h1>P5 : _ Nos ours _</h1>
+      <div class="intro_choix">
+       <div class="puce_info" onclick="init_prod(0)">version 1
+        <div class="info1">
+          par défaut :on écrit 2 chaines de textes un html classique et des
+          class dynamiques.
+        </div> </div>
+        <div class="puce_info" onclick="init_prod(1)">version 2
+        <div class="info1">
+          on manipule le DOM avec des 'document fragment et des instanciations
+          (create°'.
+        </div>
+      </div>
+      <div class="puce_info" onclick="init_prod(2)">version 3
+        <div class="info1">
+          on exploite un pattern mais le one to many pose pbme.
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="section"></section>
+    </main>
+    <template id="pattern_produit">
+      <article>
+        <div class="cadrephoto" id="photo">
+          <img />
+        </div>
+        <div class="prix2">mon ouresssss</div>
+        <div class="prix3">mon ouresssss</div>
+        <div class="truc4"> €.</div>
+        <div class="cases_color" id="case_color_a">
+        <a href="" class="truc2">Acheter</a>
+      </article>
+    </template>
+    <!--  <p id="style_color_case"></p>
+    <p id="demo2uu"></p> -->
+
+    <script>
+      function init_prod(num) {
+        document.getElementById("section").innerHTML ="";
+        switch(num) {
+  case 0:
+  document.getElementById("section").innerHTML = medit_prod_0();
+    break;
+  case 1:
+  document.getElementById("section").appendChild(medit_prod_2());
+    break;
+    case 2:
+  document.getElementById("section").appendChild(medit_prod_3());
+    break;
+  default:
+   alert("erreur")
+}
+        }
+        function medit_prod_2() {
+          let nbr = teddies.length;
+          let fragment = new DocumentFragment();
+          let arti, div;
+        for (i = 0; i < 5; i++) {
+          arti = document.createElement('article');
+          arti.id=i;
+
+        
+
+
+          div = document.createElement('h3');
+          //div.className='truc2';
+          div.textContent=teddies[i].name;
+         
+          arti.appendChild(div);
+          
+          div = document.createElement('img');
+          div.className="cadrephoto_2";
+          div.src="images/" + teddies[i].imageUrl;
+          div.alt=teddies[i].name;
+
+          arti.appendChild(div); 
+
+
+ 
+          div = document.createElement('div');
+          div.className='prix2';
+          div.textContent=teddies[i].price/100+' €.';
+          arti.appendChild(div);
+
+          let les_cases = document.createElement('div');
+          les_cases.className='choix_color';
+          les_cases.id="cc_"+i;
+
+          nb_c=teddies[i].colors.length;
+          les_cases.style.width= (30+30*nb_c) ;
+
+          
+          for (k=0;k<nb_c;k++){
+            div=document.createElement('div');
+          div.className='color_case';
+          div.id="cc"+i+"_"+k;
+    div.style.background = teddies[i].colors[k];
+    les_cases.appendChild(div);
+
+          }
+          arti.appendChild(les_cases);
+          div = document.createElement('a');
+        div.className='prix3';
+          div.textContent="Choisir";
+          div.href= "produit.html?choix=" + teddies[i]._id;
+          arti.appendChild(div);
+         
+          fragment.appendChild(arti);
+}
+
+ return fragment;
+        }
+
+      function medit_prod_0() {
+        let nbr = teddies.length;
+        let vtt = "";
+        let vt_css2 = "";
+
+        let vt_css = "<style>\n"; // class css des color
+
+        for (i = 0; i < nbr; i++) {
+          var vt_css3 = "";
+          vt_cc = ""; // html color
+
+          nom = teddies[i].name;
+          num = teddies[i]._id;
+          legende = teddies[i].description;
+          prix = teddies[i].price / 100;
+          image = "images/" + teddies[i].imageUrl;
+          vcolor = teddies[i].colors;
+          nbrc = vcolor.length;
+          for (j = 0; j < nbrc; j++) {
+            zi_color = vcolor[j];
+            vt_cc += ` <div class="color_case" id="z${i}_${j}"></div>\n`;
+
+            vt_css += `#z${i}_${j}{background:${zi_color};}\n`;
+          }
+
+          vt_css += `#cc_${i} {width: ` + (43 + 7 * nbrc) + `%;}\n`;
+          //alternative:
+
+          vtt += `<article id="article_${i}"><a href="produit.html?choix=${num}">
+             <div class="cadrephoto" id="photo_${i}">
+             <img src="${image}" alt="${nom}">
+
+           ${vt_css3} </div> <h3>${nom}</h3>
+                   <p>${legende}</p>
+                   <h4>${prix} €.</h4></a>
+                  <div class="choix_color" id="cc_${i}">Nos coloris disponible(s):${vt_cc}
+            </div></article>`;
+        }
+        // css de
+        vt_css += vt_css2 + "</style>\n";
+        return vtt + vt_css;
+      }
+
+      function medit_prod_3() {
+        let fragment = new DocumentFragment();
+        let fragment1 = new DocumentFragment();
+        let nbr = teddies.length;
+        var template2 = document.getElementById("pattern_produit")
+        //getElementsByTagName("template")[0];
+        //var list_node_element = []; //non
+
+        // console.log("nbr div" + div.length);
+        for (i = 0; i < nbr; i++) {
+          const clone = document.importNode(template2.content, true);
+
+          clone.id = i; //marche pas
+          const div = clone.querySelectorAll("div");
+          const l_image = clone.querySelector("img");
+          const le_lien = clone.querySelector("a");
+          let les_couleurs = clone.querySelector(".cases_color");
+
+          nom = teddies[i].name;
+          num = teddies[i]._id;
+          prix = teddies[i].price / 100;
+
+          la_source = "images/" + teddies[i].imageUrl;
+          couleurs = teddies[i].colors;
+
+          l_image.src = la_source;
+          l_image.src.alt = "  notre ours " + nom;
+          div[1].textContent = nom;
+          div[2].textContent = prix+" €.";
+          div[3].textContent = num;
+          les_couleurs.id = "cc" + i;
+          le_lien.href = "produit.html?choix=" + num;
+          //ajout 22
+          nbr1=couleurs.length;
+
+          
+
+ 
+          for (k = 0; k < nbr1; k++) {
+    let div = document.createElement('div');
+    div.className="la_case_color";
+    div.id="cc"+i+"_"+k;
+    div.style.background = couleurs[k];
+    fragment1.appendChild(div);
+ } 
+ clone.appendChild(fragment1);
+
+          //div[4].addEventListener("click", myFunction(nom)); ?????
+          // let les_colors = edit_color_case(i, couleurs);
+          // edit_color_case(i, couleurs);
+
+         //vdom= edit_colors(i,couleurs);
+
+          fragment.appendChild(clone);
+         // fragment.appendChild(edit_truc());
+        }
+        return fragment;
+      }
+    </script>
+  </body>
+</html>

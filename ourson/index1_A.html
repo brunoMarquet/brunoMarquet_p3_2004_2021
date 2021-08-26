@@ -1,0 +1,216 @@
+<html lang="fr">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+    <title></title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="local_teddy.js"></script>
+    <script src="a_renommer.js"></script>
+
+    <link rel="stylesheet" href="style_p5_0.css" />
+  </head>
+  <style>
+    .prix2 {
+      background-color: bisque;
+      border: 2px solid green;
+      padding: 10px;
+      height: 20px;
+      width: 20px;
+    }
+  </style>
+
+  <body onload="editpage()">
+    <header id="header"></header>
+
+    <span clas="intro" onclick="creer_jeu_essai()">jeux de test </span>
+    <button onclick="creer_jeu_essai()">jeu</button>
+    <button onclick="edit_panier()">panier</button>
+
+    <div class="intro">
+      but de la manip faire le p5 sur une page en ajax ou pas . pour éviter x
+      pages et les cookies ou le local storagelocal ( sauf celle de confirmation
+      (?))<br />
+      Evidement cela ne peut fonctionner que sur un nombre fini d'éléments
+    </div>
+    <span clas="intro" onclick="choix_prod2(0)">le 1 </span>
+
+    <div clas="intro">Rustine</div>
+
+    <span clas="prix2" onclick="choix_prod2(0)">le 1 </span>
+    <span clas="prix2" onclick="choix_prod2(1)">le 2 </span>
+    <span clas="prix2" onclick="choix_prod2(2)">le 3 </span>
+    <span clas="prix2" onclick="choix_prod2(3)">le 4 </span>
+    <span clas="prix2" onclick="choix_prod2(4)">le 5 </span>
+
+    <span onclick="">TEST</span>
+    <hr />
+
+    <hr />
+    <main id="main"></main>
+
+    <section id="section_choix"></section>
+    <div id="demo_color">titi</div>
+    <section id="section_prod"></section>
+    <footer id="footer"></footer>
+    <script>
+      let nbr_prod = teddies.length;
+      var obj_choisi;
+      var obj_cdes;
+      let choix;
+      let id_choix;
+      let panier;
+      function creer_jeu_essai() {
+        const le_max = 10; //nbrecde
+        //const le_max =
+
+        for (i = 0; i < le_max; i++) {
+          a = parseInt(Math.floor(Math.random() * 4.99));
+          nbr_art = 1 + parseInt(Math.floor(Math.random() * 1.99));
+          let prod = teddies[a];
+
+          ncol = prod.colors.length;
+          choixcol = parseInt(Math.floor(Math.random() * (ncol - 0.01)));
+          la_color = prod.colors[choixcol];
+          //
+          // a=integer( Math.random()*6));
+          console.log("ref_art: " + la_color);
+          // (id, nom, qte, color, prix)
+          obj_cdes.ajout(
+            prod._id,
+            prod.name,
+            nbr_art,
+            choixcol,
+            prod.price,
+            prod.imageUrl,
+            prod,
+            la_color
+          );
+        }
+      }
+      function intialisation() {
+        obj_cdes = new le_panier();
+      }
+
+      function edit_panier() {
+        document.getElementById("section_choix").innerHTML =
+          obj_cdes.edit_panier();
+      }
+
+      function editpage() {
+        intialisation();
+        document.getElementById("section_choix").innerHTML = "";
+        document.getElementById("section_prod").innerHTML = "";
+        // ?????
+        document.getElementById("header").innerHTML = init_header();
+        document.getElementById("footer").innerHTML = init_footer();
+        //ci dessou DOM !
+        document.getElementById("section_prod").appendChild(medit_prod());
+      }
+
+      function medit_prod() {
+        let fragment = new DocumentFragment();
+        let arti, div, div_b, les_cases; //  new DocumentFragment();
+        for (i = 0; i < nbr_prod; i++) {
+          arti = document.createElement("article");
+          arti.id = "article" + i;
+
+          div = document.createElement("h3");
+          //div.className='truc2';
+          div.textContent = teddies[i].name;
+
+          arti.appendChild(div);
+
+          div = document.createElement("img");
+          div.className = "cadrephoto_2";
+          div.src = "images/" + teddies[i].imageUrl;
+          div.alt = teddies[i].name;
+
+          arti.appendChild(div);
+
+          div_b = document.createElement("div");
+          div_b.id = "la_legende" + i;
+          div_b.className = "la_legende";
+
+          div = document.createElement("div");
+          div.className = "prix2";
+          div.textContent = teddies[i].price / 100 + " €.";
+          div_b.appendChild(div);
+
+          les_cases = document.createElement("div");
+          les_cases.className = "choix_color";
+          les_cases.id = "cc_" + i;
+
+          nb_c = teddies[i].colors.length;
+          les_cases.style.width = 30 + 30 * nb_c;
+
+          for (k = 0; k < nb_c; k++) {
+            div = document.createElement("div");
+            div.className = "color_case";
+            div.id = "cc" + i + "_" + k;
+            div.style.background = teddies[i].colors[k];
+            les_cases.appendChild(div);
+          }
+          div_b.appendChild(les_cases);
+          div = document.createElement("div");
+          div.id = "prod_" + i;
+          div.className = "prix3";
+          div.textContent = "Choisir";
+          div.addEventListener("click", choix_prod3(teddies[i]._id));
+          //div.href= "produit.html?choix=" + teddies[i]._id;
+          div_b.appendChild(div);
+          arti.appendChild(div_b);
+
+          fragment.appendChild(arti);
+        }
+
+        return fragment;
+      }
+
+      function choix_prod(pid) {
+        //bug le pid est lre num de produit..
+        console.log("on bosse..." + pid);
+        les_artic = document.getElementsByTagName("article");
+        //les_legendes = document.getElementsByClasName("la_legende");
+
+        for (i = 0; i < nbr_prod; i++) {
+          //les_artic[i].style.width = "100px";
+          document.getElementById("article" + i).style.width = "100px";
+
+          document.getElementById("la_legende" + i).style.display = "none";
+          if (i == pid) {
+            edit_choix_prod(pid);
+          }
+        }
+      }
+      function edit_choix_prod(pid) {
+        i = parseInt(pid);
+        choix = i;
+
+        obj_choisi = new le_choix(
+          teddies[i]._id,
+          teddies[i].name,
+          teddies[i].imageUrl,
+          teddies[i].price,
+          teddies[i].description,
+          teddies[i].colors
+        );
+        document.getElementById("section_choix").innerHTML = obj_choisi.edit();
+        document.getElementById("demo_color").innerHTML =
+          obj_choisi.edit_color();
+      }
+
+      function choix_prod3(ki) {
+        console.log("bug..." + ki);
+      }
+      function choix_prod2(ki) {
+        choix_prod(ki);
+        //alert(teddies[parseInt(ki)]._id);
+        //choix_prod(teddies[parseInt(ki)]._id);
+      }
+    </script>
+  </body>
+</html>

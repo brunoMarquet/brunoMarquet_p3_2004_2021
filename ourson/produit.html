@@ -1,9 +1,8 @@
 <html lang="fr">
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <link rel="icon" href="favicon.ico" />
 
-    <title>ohmyfood nos restaurants</title>
+    <title></title>
 
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -11,13 +10,13 @@
     />
     <script src="local_teddy.js"></script>
     <script src="p5_script.js"></script>
-    <link rel="stylesheet" href="P5_style.css" />
+    <link rel="stylesheet" href="ourson.css" />
 
     <!-- <script src="models/Teddy.js"></script>-->
   </head>
 
   <body onload="minit()">
-    <a href="index_teddy.html">
+    <a href="index1.html">
       <i class="fas fa-arrow-left" id="comeback"></i
     ></a>
     <span class="choix_lang" onclick="l_ours.langue=0, edit_ourson()"> FR</span>
@@ -36,7 +35,7 @@
     <style></style>
 
     <script>
-      var l_ours;
+      let l_ours;
       function cde_edit() {
         document.getElementById("commander").innerHTML =
           l_ours.param_local[l_ours.langue][4];
@@ -52,7 +51,7 @@
       }
 
       function f_ourson() {
-        l_ours = new ours(
+        l_ours = new Ours(
           teddies[i]._id,
           teddies[i].name,
           teddies[i].imageUrl,
@@ -118,6 +117,8 @@
             console.log("YES : " + i);
             id_ours = i;
             f_ourson();
+            /*  var x = document.getElementsByTagName("P");
+            alert(x.length); */
           }
         }
 
@@ -141,11 +142,12 @@
       type="number"
       id="quantity"
       name="quantity"
-      min="1"
+      min="0"
       max="5"
       value="1"
       oninput="l_ours.edit_qte(this.value)"
-    /><br /><br />
+    />
+    <br />
 
     <div id="commander" onclick="l_ours.commander()"></div>
     <div id="message_info"></div>
