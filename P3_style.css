@@ -1,9 +1,11 @@
 :root {
   --rose1: #9356dc;
   --rose2: #ff79da;
-  --largeur_max: 945;
+  --largeur_max: 945px;
+  --largeur_plat: 450px;
+  --hauteur_plat: 64px;
   --footer_color: rgb(168, 255, 155);
-  --delais: 0.2;
+  --delais: 0.4s;
   --taille_1: 4rem;
   --taille_2: 2rem;
 }
@@ -75,19 +77,6 @@ body {
     top: 50%;
     height: 0%;
   }
-  /*   100% {
-    opacity: 0;
-    left: 45%;
-    width: 10%;
-    top: 45%;
-    height: 10%;
-  } */
-
-  /* width: 0%;
-    height: 0% ; */
-
-  /*100% {display:none;}
-  */
 }
 
 a {
@@ -99,18 +88,13 @@ a:hover {
   cursor: pointer;
 }
 
-#loadtransition {
-  /* position: absolute;
-          width: 1000px;
-          height: 1000px; 
-          background: grey;*/
-}
 h1 {
   font-family: "Shrikhand", cursive;
   font-size: 1.8rem;
   font-weight: 500;
 
   text-align: center;
+
   margin: 0;
   color: black;
   padding-bottom: 12px;
@@ -193,8 +177,8 @@ h2 {
 }
 
 #flex_howtoo {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
 }
 #choixrestaurant {
   display: flex;
@@ -231,16 +215,6 @@ nav {
   padding: 20px;
 }
 
-#lemenu {
-  /*width: 400px;
-          opacity: 0.9;*/
-  background: rgb(240, 240, 240);
-  border-radius: 20px 20px 0 0;
-  position: absolute;
-  top: -40px;
-  /*<0 pour croper le visuel du restau choisi*/
-}
-
 #choixrestaurant h2 {
   margin-left: 24px;
 }
@@ -271,23 +245,16 @@ nav {
   margin-top: 15px;
   margin-left: 12px;
   /*on compense le _ 12 de la puce*/
-  flex: 51%;
-  flex-wrap: wrap;
+
   height: 64px;
   width: 300px;
-  /* position: relative;*/
-  /* margin: 15px;
-          padding-left: 15px;
-          padding: 5px;
-          background:F6F6F6;rgb(240, 240, 240)
-          */
+
   border-radius: 24px;
   background: #f6f6f6;
   box-shadow: 3px 2px 2px #eae7e7;
 }
 
 .howtoo:hover {
-  /*color: rgb(20, 20, 200);*/
   cursor: pointer;
   background: rgb(240, 230, 230);
   box-shadow: 6px 4px 4px #888888;
@@ -305,10 +272,13 @@ nav {
   height: 28px;
   width: 28px;
   color: white;
+
   text-align: center;
   border-radius: 50%;
   border: 1px solid white;
-  padding: 5px 8px 3px 8px;
+  padding: 0 8px;
+  font-size: 1rem;
+  padding-top: calc(11px - 0.5rem);
 }
 
 .pucenum:before {
@@ -330,9 +300,7 @@ nav {
 .annonce1 {
   display: flex;
   flex-direction: column;
-
   margin: 5px;
-
   border-radius: 24px;
   background: #fff;
   /* border: 5px solid #fff;
@@ -366,24 +334,21 @@ nav {
 }
 
 img#ziresto {
-  /* #ziresto img ?????K*/
-  /* object-fit: scale-down;*/
   object-fit: contain;
   width: 100%;
   height: auto;
 }
-.bt_position1 {
-  margin: 0 auto;
-}
-.bt_position2 {
-  /* margin-left=calc((320 - 225)* 0.5);*/
-  margin-left: 48px;
-}
+
+/*.bt_position2 {
+   margin-left=calc((320 - 225)* 0.5);
+  margin-left: 48px;}
+  */
+
 .bt_iconique {
   width: 225px;
   border-radius: 25px;
   background: linear-gradient(170deg, var(--rose2), var(--rose1));
-
+  margin: 0 auto;
   padding: 16px 0px;
 
   text-align: center;
@@ -399,13 +364,12 @@ img#ziresto {
   opacity: 0.9;
   box-shadow: 0px 0px 4px #000000;
   cursor: pointer;
-  /*
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 /*entre plat dessert*/
 .rubriq h3 {
   color: grey;
+  margin-left: calc((8px + 100% - var(--largeur_plat)) / 2);
   width: 100%;
   font-size: 1.1rem;
   font-weight: 200;
@@ -469,14 +433,10 @@ footer li > .fas {
    -------------------------------
    -- debut pagr menu------------*/
 
-#header {
-  display: flex;
-  justify-content: center;
-}
-
 #comeback {
   font-size: 24px;
   color: black;
+  margin-bottom: 18px;
 }
 #comeback:hover {
   color: var(--rose1);
@@ -490,9 +450,9 @@ footer li > .fas {
 .le_plat {
   display: flex;
   margin-top: 8px;
-  /* margin-left: calc(50% - 160px); */
-
-  max-width: 320px;
+  margin-left: calc((8px + 100% - var(--largeur_plat)) / 2);
+  max-width: var(--largeur_plat);
+  height: var(--hauteur_plat);
   border-radius: 10px;
   background: white;
   opacity: 0;
@@ -502,10 +462,11 @@ footer li > .fas {
 }
 
 .le_plat:nth-of-type(2) {
-  animation-delay: 0.2s;
+  /* var(--delais): calc (var(--delais) / 2);*/
+  animation-delay: var(--delais);
 }
 .le_plat:nth-of-type(3) {
-  animation-delay: 0.4s;
+  animation-delay: calc(2 * var(--delais));
 }
 
 @keyframes menu {
@@ -531,12 +492,7 @@ footer li > .fas {
 
 le_plat:hover i {
   display: inline;
-  transform: rotate(270deg);
-}
-
-.plat_prix {
-  min-width: 50px;
-  padding-left: 10px;
+  transform: rotate(360deg);
 }
 
 .le_plat:hover .fas {
@@ -576,8 +532,8 @@ le_plat:hover i {
   opacity: 0;
 }
 .plat_prix {
-  flex: 1;
-  align-self: flex-end;
+  padding-top: calc(var(--hauteur_plat) - (6px + 1.1rem));
+
   width: 40px;
   font-size: 1.2rem;
   color: black;
@@ -585,7 +541,7 @@ le_plat:hover i {
 }
 
 .plat_legende {
-  width: 300px;
+  width: calc(var(--largeur_plat) - 20px);
   overflow: hidden;
 }
 .resto_legende {
@@ -593,13 +549,9 @@ le_plat:hover i {
 }
 
 .plat_checked {
-  display: flex;
-
+  /*display: flex;*/
   text-align: center;
-
-  padding-top: 16px;
-  /*calc(50% - 1.8rem);*/
-
+  padding-top: calc(var(--hauteur_plat) / 2 - 0.65rem);
   width: 0%;
   background-color: #99e2d0;
   border-radius: 0 10px 10px 0;
@@ -607,39 +559,41 @@ le_plat:hover i {
 
 .tiret {
   border-top: 2px solid #99e2d0;
+  margin-left: calc((10px + 100% - var(--largeur_plat)) / 2);
   width: 50px;
   padding-bottom: 16px;
-
   margin-top: -16px;
 }
 .haut_page {
+  /* flex-direction: column;
+  justify-content: center;
+  align-items: center; */
   position: relative;
-
   top: -20px;
   background-color: white;
   border-radius: 40px;
 }
 .haut_page h2 {
-  padding-left: 80px;
   padding-top: 20px;
-
   font-family: "Shrikhand", cursive;
   font-size: 1.5rem;
   font-weight: 400;
+  margin-left: calc((8px + 100% - var(--largeur_plat)) / 2);
 }
 .haut_page i {
+  /*A FAIRE si different de 20px*/
   right: 40px;
-  top: 20px;
+  /*28  calc(40px - (20px * 0.9));
+ 35px; calc(60% - 40px)  40px*/
+  top: 24px;
 }
 
 #le_menu {
-  margin-left: calc(50% - 152px);
-  /*on decalle de 8 vers la droite*/
+  /*  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
 }
-
-/*----------------------------------- */
-/*------------ texte------------------ */
-/*----------------------------------- */
 
 .food {
   font-size: 1.1rem;
@@ -658,7 +612,7 @@ le_plat:hover i {
   padding-bottom: 6px;
 }
 .foodprice {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   margin-bottom: 6px;
   margin-right: 6px;
@@ -673,4 +627,22 @@ le_plat:hover i {
   transition-property: transform;
   transition-duration: 0.4s;
   transition-delay: 0.2s;
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --largeur_plat: 350px;
+  }
+}
+@media screen and (max-width: 370px) {
+  :root {
+    --largeur_plat: 280px;
+  }
+
+  .haut_page i {
+    right: calc(40px - (370px - 100%) / 3);
+  }
+  .resto_legende i {
+    right: calc(40px - (370px - 100%) / 4);
+  }
 }
