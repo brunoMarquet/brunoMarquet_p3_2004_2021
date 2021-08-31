@@ -1,0 +1,58 @@
+<html lang="fr">
+  <title>iframe_p3"</title>
+  <head>
+    <script>
+      function change_width(largeur) {
+        document.getElementById("zi_p3").width=largeur;
+        //var frames = window.frames;
+
+       // frames[0].location = "https://www.w3schools.com";
+       // alert( frames[0].location);
+      
+      }
+     /*  function change_scroll(koi){
+         if (koi==1){
+              document.getElementById("zi_p3").scrolling="yes";
+         }else{ document.getElementById("zi_p3").scrolling="no";}
+      } */
+      function permut_scroll(){
+        if(document.getElementById("zi_p3").scrolling== "yes"){
+          document.getElementById("zi_p3").scrolling="no";
+
+        }else{
+          document.getElementById("zi_p3").scrolling="yes";
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+      <select onchange="change_width(this.value)">
+          <option value=300>300</option>
+          <option value=320>320</option>
+          <option value=370>370</option>
+          <option value=400>400</option>
+          <option value=500>500</option>
+          <option value=600>600</option>
+          <option value=700>700</option>
+          <option value=900>900</option>
+          <option value=1100>1100</option>
+          <option value=1200>1200</option>
+      </select>
+    
+    <button onclick="permut_scroll()">barre de scrolling</button>
+
+    <hr>
+    <iframe
+      id="zi_p3"
+      title="zi_p3_titre"
+      width="320 px";
+       scrolling="no";
+      height="100%"; 
+      src="../index.html"
+    </iframe>
+    <script>
+        var l_fr= document.getElementById("zi_p3");
+    </script>
+  </body>
+</html>
