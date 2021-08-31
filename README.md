@@ -2,6 +2,7 @@
 site de restauration
 
 validation refusée......
+ps en cliquabt sur mentions légales vous tomberez sur des éléments additionels 
 
 __________________________
 Validators Donation Program logo	The W3C validators rely on community support for hosting and development.
@@ -13,14 +14,25 @@ Erreurs2 Avertissements22 a Ce document n'a pas réussi le test : W3C Validateur
 a Erreurs (2)
 Fichier : https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css	a
 5		.fa, .fab, .fad, .fal, .far, .fas	La propriété “text-rendering” n'existe pas : auto	a
+_____
+???
+__________
 Fichier : file://localhost/P3_style.css	a
 Erreur inconnue java.lang.Exception: import file://localhost/P3_style.css: Operation not permitted	a
+cela me parait ok qu'il ne puisse pas acceder à mon disque dur
+______________________
 a Avertissements (22)
+_______________________
+
 Fichier : file://localhost/index.html	a
 9			Vous devriez ajouter un attribut 'type' ayant pour valeur 'text/css' à l'élément 'link'	a
 15			Vous devriez ajouter un attribut 'type' ayant pour valeur 'text/css' à l'élément 'link'	a
 17			Vous devriez ajouter un attribut 'type' ayant pour valeur 'text/css' à l'élément 'link'	a
 Fichier : https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css	a
+____
+modifié depuis
+__
+
 5			La propriété “-moz-osx-font-smoothing” est une extension propriétaire inconnue	a
 5			La propriété “-webkit-font-smoothing” est une extension propriétaire inconnue	a
 5			La propriété “-webkit-animation” est une extension propriétaire inconnue	a
@@ -51,19 +63,23 @@ CSS:
 Remarque :
 Erreur
  Ce document n'a pas réussi le test : W3C Validateur CSS (Niveau 3) Lien direct
-a Erreurs (13)
+
 Fichier : file://localhost/P3_style.css	a
+__________________________________
+a Erreurs (13)
+__________________________________
 38		.fa-spinner	Propriété erronée : top (nullvisuren.html#propdef-top) Erreur lors de l'analyse grammaticale. )) / 2)	a
 39		.fa-spinner	Propriété erronée : left (nullvisuren.html#propdef-left) Erreur lors de l'analyse grammaticale. )) / 2)	a
-MA REPONSE: 
+
+MA REPONSE: calculs
  top: calc((100% - var(--taille_1)) / 2);
   left: calc((100% - var(--taille_1)) / 2);
   
-
+MA REPONSE: calculs
 46		.num2	Propriété erronée : top (nullvisuren.html#propdef-top) Erreur lors de l'analyse grammaticale. )) / 2)	a
 47		.num2	Propriété erronée : left (nullvisuren.html#propdef-left) Erreur lors de l'analyse grammaticale. )) / 2)	a
 
-IDEM
+IDEM :
  top: calc((100% - var(--taille_2)) / 2);
   left: calc((100% - var(--taille_2)) / 2);
   
@@ -114,6 +130,12 @@ IDEM : avec par ex. "10px" par rapport à "8px" qui décalle le tiret de 2 à dr
 
 IDEM avec 8px  au lieu de 10:
  margin-left: calc((8px + 100% - var(--largeur_plat)) / 2);
+ 
+_____________
+ Conclusion:
+ ! toutes les erreurs sont liées à un calc avec une variable dans le calcul !
+ _____________________
+ 
 ___________________
  Avertissements (14)
 Fichier : file://localhost/P3_style.css	a
@@ -130,15 +152,18 @@ Fichier : file://localhost/P3_style.css	a
 634			La propriété “--largeur_plat” est une extension propriétaire inconnue	a
 639			La propriété “--largeur_plat” est une extension propriétaire inconnue
 
-"j'ai fait le choix d'utiliser des variables!"
+"j'ai fait le choix d'utiliser des variables! pour le centrrage des éléments !" 
 
 161			Le pseudo-élément “::-webkit-input-placeholder” est une extension propriétaire inconnue	a
 521			La propriété “-webkit-background-clip” est une extension propriétaire inconnue	a
 522			La propriété “-webkit-text-fill-color” est une extension propriétaire inconnue	a
 
+obligation pour avoir un awesone fond "tranparent....sinon prendre un pur svg ?
 
-
-page d'un restaurantt parmi les 4...
+____________________________
+Analyse de page d'un restaurantt parmi les 4... meme typologie d'erreur!
+Fichier : file://localhost/A_la_francaise.html	a
+______________________
  Ce document n'a pas réussi le test : Nu Html Checker Lien direct
 a Informations (1)
 Document soumis	a
@@ -150,7 +175,7 @@ Erreur inconnue java.lang.Exception: import file://localhost/../P3_style.css: Op
 Fichier : https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css	a
 5		.fa, .fab, .fad, .fal, .far, .fas	La propriété “text-rendering” n'existe pas : auto	a
 a Avertissements (22)
-Fichier : file://localhost/A_la_francaise.html	a
+
 6			Vous devriez ajouter un attribut 'type' ayant pour valeur 'text/css' à l'élément 'link'	a
 11			Vous devriez ajouter un attribut 'type' ayant pour valeur 'text/css' à l'élément 'link'	a
 17			Vous devriez ajouter un attribut 'type' ayant pour valeur 'text/css' à l'élément 'link'	a
