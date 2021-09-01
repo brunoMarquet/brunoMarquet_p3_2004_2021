@@ -5,11 +5,19 @@ a {
 section {
 }
 
-.choix_lang {
-  background-color: cornsilk;
-  padding: 10px;
-  width: 30px;
+.choix_lang,
+nav {
+  display: inline;
 }
+nav div {
+  margin: 20px;
+  background-color: cornsilk;
+  border: 1px solid rgb(95, 95, 175);
+  padding: 10px;
+  width: 60px;
+}
+
+nav div:hover,
 .choix_lang:hover {
   cursor: pointer;
   color: blue;
@@ -188,11 +196,3 @@ article h4 {
   border-radius: 5px;
   border: 2px solid rgb(47, 6, 80);
 }
-.erreur {
-  background: #6a8d81;
-  padding: 5px;
-}
-
-/* .erreur:hover #demo {
-  display: block;
-} */

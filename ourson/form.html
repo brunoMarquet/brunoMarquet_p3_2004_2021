@@ -40,13 +40,47 @@
       const date = new Date();
 
       function minit_form() {
-        koi = document.URL.split("@");
+        /* koi = document.URL.split("@");
 
         ki = koi[1] + " <br> " + parseInt(koi[2]) + " <br> " + parseInt(koi[3]);
         la_cde = Une_cde(koi[1], koi[2], koi[3]);
 
         document.getElementById("demo").innerHTML =
           ki + "<br>  " + date.toString() + "<br>" + date.getTime();
+        let info_cli = []; */
+
+        info_cli = localStorage.getItem("info-client");
+        const itd = localStorage.item_del;
+        ki_client = info_cli.split(itd);
+
+        //alert(ki_client[2]);
+        document.getElementById("lastName").value = ki_client[0];
+        document.getElementById("firstName").value = ki_client[1];
+        document.getElementById("email").value = ki_client[2];
+        document.getElementById("address").value = ki_client[3];
+        document.getElementById("city").value = ki_client[4];
+        //rustine
+        le_panier = localStorage.panier;
+
+        document.getElementById("demo").innerHTML = le_panier;
+        lig_cde = le_panier.split(itd);
+        nbr = lig_cde.length;
+        vtt = "votre commande:<br>";
+        for (j = 1; j < nbr; j++) {
+          koi = lig_cde[j].split("@");
+          vtt +=
+            "ref : " +
+            koi[0] +
+            " qte: " +
+            parseInt(koi[1]) +
+            " code couleur " +
+            parseInt(koi[2]) +
+            "<br>";
+        }
+        alert(vtt);
+        document.getElementById("demo").innerHTML = vtt;
+
+        // alert(localStorage.panier);
       }
     </script>
 
@@ -58,8 +92,8 @@
       <!-- Header -->
 
       <nav>
-        <a href="">Accueil</a>
-        <a href="#" class="">Contact</a>
+        <div class="accueil" onclick="go_accueil()">Accueil</div>
+        <div class="" onclick="go_panier()">Panier</div>
       </nav>
     </header>
     <main>
@@ -105,7 +139,7 @@
             type="text"
             id="address"
             class="form-control"
-            value="Paris"
+            value="Lyon"
             required
           />
         </label>
@@ -115,7 +149,7 @@
             type="text"
             id="city"
             class="form-control"
-            value="75000"
+            value="000"
             required
           />
         </label>

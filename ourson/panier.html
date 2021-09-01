@@ -1,0 +1,57 @@
+<html lang="fr">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+    <title></title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="local_teddy.js"></script>
+    <script src="p5_script.js"></script>
+    <link rel="stylesheet" href="ourson.css" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <script>
+      function minit_panier() {
+        le_panier = localStorage.getItem("panier");
+        itd = localStorage.getItem("item_del");
+        let lig_cde = le_panier.split(item_del);
+      }
+    </script>
+
+    <style></style>
+  </head>
+
+  <body onload="minit_panier()">
+    <header>
+      <!-- Header -->
+      <nav>
+        <div class="accueil" onclick="go_accueil()">Accueil</div>
+        <div class="" onclick="go_panier()">Panier</div>
+      </nav>
+    </header>
+    <main></main>
+    <!--fin main"-->
+
+    <!-- Footer -->
+    <footer>
+      <a class="social" href="index.html"
+        ><i class="fab fa-twitter icon_md"></i
+      ></a>
+      <a class="social" href="index.html"
+        ><i class="fab fa-facebook-f icon_md"></i
+      ></a>
+      <a class="social" href="index.html"
+        ><i class="fab fa-dribbble icon_md"></i
+      ></a>
+      <a class="social" href="index.html"
+        ><i class="fab fa-instagram icon_md"></i
+      ></a>
+    </footer>
+  </body>
+</html>

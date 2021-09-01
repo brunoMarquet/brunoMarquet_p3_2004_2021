@@ -10,7 +10,7 @@
     />
     <script src="local_teddy.js"></script>
     <script src="p5_script.js"></script>
-    <link rel="stylesheet" href="p5_style.css" />
+    <link rel="stylesheet" href="ourson.css" />
     <!-- <script src="models/Teddy.js"></script>-->
   </head>
   <style>
@@ -65,11 +65,19 @@
       }
   </style>
 
-  <body onload="init_prod(0)">
+  <body onload="init_locastorage(), init_prod(0)">
     <header>
-      <h2>Bienvenue sur Orinoco Site de commerce en ligne</h2>
+      <nav><div class="accueil" onclick="go_accueil()">Accueil</div>
+        <div class="" onclick="go_panier()">Panier</div>
+      </nav>
+      <h2>Bienvenue sur l'accueil d'Orinoco Site de commerce en ligne</h2>
 
       <h1>P5 : _ Nos ours _</h1>
+      <div class="intro_cookies">
+
+        <button onclick="localStorage.clear();">raz_storage</button>
+      </div>
+
       <div class="intro_choix">
        <div class="puce_info" onclick="init_prod(0)">version 1
         <div class="info1">
@@ -108,6 +116,33 @@
     <p id="demo2uu"></p> -->
 
     <script>
+
+      function init_locastorage(){
+
+        localStorage.setItem("mytime", Date.now());
+        itd="_#_";
+        localStorage.setItem("item_del",itd);
+        if (localStorage.panier =='undefined'){
+           localStorage.setItem("panier",0);
+        }
+       
+
+        nom="Dupont-Telle";
+        prenom="Pierre-henry";
+        le_mail="dupont456@gmail"
+        ville="Paris";
+        cp_v="75000";
+
+       // localStorage.setItem("info-client", ["dupont","marcel","dupont456@gmail","Paris","75000"]);
+        localStorage.setItem("info-client",nom+itd+prenom+itd+le_mail+itd+ville+itd+cp_v);
+        console.log("");
+      }
+      function myFunction____() {
+  var x = localStorage.getItem("mytime");
+  document.getElementById("demo").innerHTML = x;
+}
+     
+      
       function init_prod(num) {
         document.getElementById("section").innerHTML ="";
         switch(num) {

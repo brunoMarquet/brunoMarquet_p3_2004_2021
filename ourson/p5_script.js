@@ -1,3 +1,17 @@
+function go_panier() {
+  window.location = "form.html";
+  /* le_panier=localStorage.getItem("panier");
+  if (le_panier == 0){
+  alert("panier vide");
+  }
+  else {
+    window.location="form.html";
+  }
+*/
+}
+
+function go_accueil() {}
+
 function edit_ourson() {
   document.getElementById("produit").innerHTML = l_ours.edit();
   cde_edit();
@@ -11,14 +25,14 @@ function Ours(id, nom, image, prix, legende, couleurs) {
       "couleur choisie : ",
       "prix : ",
       "vous devez choisir une teinte svp",
-      "valider la commande",
+      "Ajouter au panier",
     ],
     [
       "Quantity : ",
       "color choice : ",
       "price : ",
       "can you choice a color please",
-      "to order your command",
+      "add to basket",
     ],
   ];
   this.id = id;
@@ -106,10 +120,19 @@ function Ours(id, nom, image, prix, legende, couleurs) {
       message_alert(this.param_local[this.langue][3]);
     } else {
       this.valid_cde();
+
       //window.location='form.html?choix='+this.id+'&qty='+this.qty+'&color='+this.choix_couleur;
     }
   };
   this.valid_cde = function () {
-    window.location = `form.html?choix@${this.id}@${this.qty}@${this.choix_couleur}`;
+    vlig = `${this.id}@${this.qty}@${this.choix_couleur}`;
+    le_panier = localStorage.getItem("panier");
+    itd = localStorage.getItem("item_del");
+    le_panier += itd + vlig;
+    console.log(le_panier);
+    localStorage.setItem("panier", le_panier);
+    //alert(vlig);
+
+    //window.location = `form.html?choix@${this.id}@${this.qty}@${this.choix_couleur}`;
   };
 }

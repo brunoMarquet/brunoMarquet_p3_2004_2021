@@ -16,18 +16,15 @@
   </head>
 
   <body onload="minit()">
-    <a href="index1.html">
-      <i class="fas fa-arrow-left" id="comeback"></i
-    ></a>
+    <a href="index1.html"> <i class="fas fa-arrow-left" id="comeback"></i></a>
+    <nav>
+      <div class="accueil" onclick="go_accueil()">Accueil</div>
+      <div class="" onclick="go_panier()">Panier</div>
+    </nav>
+
     <span class="choix_lang" onclick="l_ours.langue=0, edit_ourson()"> FR</span>
     <span class="choix_lang" onclick="l_ours.langue=1, edit_ourson()"> US</span>
     <h1>_ Nos ours _ (P5_produits)</h1>
-
-    <div class="erreur">
-      bug
-
-      <p id="demo"></p>
-    </div>
 
     <p id="produit"></p>
     <p id="demo_color"></p>
@@ -86,8 +83,6 @@
       }
 
       function minit() {
-        document.body.style.backgroundColor = "grey";
-
         koi = document.URL.split("choix=")[1];
 
         var ourson = koi.toString();
@@ -132,8 +127,8 @@
           // malert(ourson);
         } else {
         }
-        console.log(les_errors);
-        document.getElementById("demo").innerHTML = les_errors;
+        // console.log(les_errors);
+        // document.getElementById("demo").innerHTML = les_errors;
       }
     </script>
 
