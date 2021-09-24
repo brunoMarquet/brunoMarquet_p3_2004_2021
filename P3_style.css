@@ -14,8 +14,7 @@ body {
   max-width: var(--largeur_max);
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
-
-  font-size: 100%; /* nota bene 100% = 16px  - Ailleurs mettre combien de rem - par ex au lieu de 32px mettre 2rem */
+  font-size: 100%;
   font-size: 1em;
 }
 
@@ -34,7 +33,7 @@ body {
   top: calc((100% - var(--taille_1)) / 2);
   left: calc((100% - var(--taille_1)) / 2);
 }
-.num2 {
+.spinner_2 {
   color: #c5cfc5;
   font-size: var(--taille_2);
   top: calc((100% - var(--taille_2)) / 2);
@@ -132,7 +131,7 @@ h2 {
   justify-content: center;
   align-items: center;
   background-color: #eaeaea;
-  
+
   padding: 16px;
   margin-bottom: 0px;
 
@@ -143,7 +142,6 @@ h2 {
 }
 
 ::-webkit-input-placeholder {
-  
   font-weight: bolder;
   font-size: 1rem;
   color: rgb(133, 133, 133);
@@ -151,32 +149,30 @@ h2 {
   padding-bottom: 0px;
 }
 
-#choixrestaurant {
-
+#choix_restaurant {
   margin-top: 30px;
 }
-#search_restau {
+#recherche_restaurant {
   border: transparent;
   background: transparent;
 }
 
-#choixrestaurant {
+#choix_restaurant {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-#choixrestaurant h2 {
+#choix_restaurant h2 {
   padding-left: 40px;
   padding-top: 10px;
   width: 100%;
 }
-#howtodo h2 {
+#les_methodes h2 {
   padding-top: 10px;
 }
 
 .cadre_imag {
-
   height: 180px;
 
   border-radius: 20px 20px 0 0;
@@ -189,8 +185,7 @@ h2 {
   height: 100%;
 }
 
-.rubriq {
-  
+.section_menu {
 }
 
 nav {
@@ -200,29 +195,29 @@ nav {
   padding: 20px;
 }
 
-#choixrestaurant h2 {
+#choix_restaurant h2 {
   margin-left: 24px;
 }
-#howtodo {
+#les_methodes {
   padding-left: 40px;
   margin-left: 24px;
 }
 
-#howtodo h2 {
+#les_methodes h2 {
   width: 100%;
 }
 
-.howtoo .fas {
+.une_methode .fas {
   margin-left: 20px;
   color: grey;
   font-size: 1.2rem;
 }
-.howtoo p {
+.une_methode p {
   margin-left: 20px;
   font-weight: bold;
 }
 
-.howtoo {
+.une_methode {
   display: flex;
   justify-content: flex-start;
 
@@ -240,17 +235,17 @@ nav {
   box-shadow: 3px 2px 2px #eae7e7;
 }
 
-.howtoo:hover {
+.une_methode:hover {
   cursor: pointer;
   background: rgb(240, 230, 230);
   box-shadow: 6px 4px 4px #888888;
 }
 
-.howtoo:hover .fas {
+.une_methode:hover .fas {
   color: var(--rose1);
 }
 
-.pucenum {
+.puce_numero {
   position: relative;
 
   background: var(--rose1);
@@ -267,7 +262,7 @@ nav {
   padding-top: calc(11px - 0.5rem);
 }
 
-.pucenum:before {
+.puce_numero:before {
   content: counter(myIndex);
 }
 
@@ -289,10 +284,10 @@ nav {
   margin: 5px;
   border-radius: 24px;
   background: #fff;
-   width: 240px;
+  width: 240px;
   box-shadow: 0px 0px 8px #000000;
 }
-.restobox {
+.article_restau {
   position: relative;
   margin: 25px;
   padding: 0px;
@@ -301,22 +296,22 @@ nav {
   background: white;
   box-shadow: 0px 0px 1px #000000;
 }
-.restobox:hover {
+.article_restau:hover {
   background: #f4f9f4;
   box-shadow: 0px 0px 8px #000000;
 }
 
-#ziresto {
+#visuel_restau {
   max-width: var(--largeur_max);
 }
 
-#ziresto img {
+#visuel_restau img {
   object-fit: scale-down;
   width: 100%;
   height: 100%;
 }
 
-img#ziresto {
+img#visuel_restau {
   object-fit: contain;
   width: 100%;
   height: auto;
@@ -334,7 +329,6 @@ img#ziresto {
   color: white;
   font-family: Roboto;
   box-shadow: 0px 0px 4px #908e8e;
-  
 }
 
 .bt_iconique:hover {
@@ -344,7 +338,7 @@ img#ziresto {
 }
 
 /*entre plat dessert*/
-.rubriq h3 {
+.section_menu h3 {
   color: grey;
   margin-left: calc((8px + 100% - var(--largeur_plat)) / 2);
   width: 100%;
@@ -355,7 +349,7 @@ img#ziresto {
 
   padding-bottom: 6px;
 }
-.new_resto {
+.nouveau_restau {
   /*flyer news*/
   position: absolute;
   font-weight: bold;
@@ -368,7 +362,6 @@ img#ziresto {
   background: #99e2d0;
   padding: 5px 0px;
 }
-
 
 footer {
   margin-top: 50px;
@@ -389,7 +382,6 @@ footer p {
 footer ul {
   margin: 0px;
   padding: 0px;
-  
 }
 footer li {
   margin: 0px;
@@ -397,7 +389,7 @@ footer li {
   padding: 0px;
   font-size: 0.95rem;
   list-style-type: none;
- padding: 5px 0px;
+  padding: 5px 0px;
 }
 
 footer li:hover {
@@ -405,22 +397,20 @@ footer li:hover {
   cursor: pointer;
 }
 
-
 footer li:hover a {
   color: var(--footer_color);
 }
 
 footer li > .fas {
   width: 40px;
-
 }
 
-#comeback {
+#retour_index {
   font-size: 24px;
   color: black;
   margin-bottom: 18px;
 }
-#comeback:hover {
+#retour_index:hover {
   color: var(--rose1);
 }
 
@@ -460,24 +450,23 @@ footer li > .fas {
 }
 
 .le_plat:hover .plat_checked {
-opacity: 1;
+  opacity: 1;
   transition-property: width;
   transition-duration: 0.4s;
   display: inline;
   width: 60px;
 }
 
-.le_plat:hover i{
+.le_plat:hover i {
   opacity: 1;
-  
-transform: rotate(360deg);
+
+  transform: rotate(360deg);
 }
 .le_plat i {
-  
   color: #fff;
   font-size: 1.3rem;
   opacity: 0;
-  transition:opacity 0.4s, transform 0.4s;
+  transition: opacity 0.4s, transform 0.4s;
   /* transition-property: transform; */
   transition-duration: 0.4s;
   transition-delay: 0.2s;
@@ -549,9 +538,11 @@ transform: rotate(360deg);
 }
 .haut_page {
   position: relative;
-  top: -20px;
-  background-color: white;
-  border-radius: 40px;
+  top: -40px;
+  background-color: #f6f6f6;
+  border-radius: 40px 40px 0 0;
+  height:80px;
+  /* margin-bottom: 0px; */
 }
 .haut_page h2 {
   padding-top: 20px;
@@ -566,7 +557,13 @@ transform: rotate(360deg);
 }
 
 #le_menu {
-  background-color: #f6f6f6;
+  margin-top: -40px;
+  display: flex;
+  flex-direction: column;
+  /*justify-items: center;*/
+  align-items: center;
+  background-color: #f6f6f6; /*f6*/
+  padding-bottom: 32px;
 }
 
 .plat_legende h4 {
@@ -582,7 +579,7 @@ transform: rotate(360deg);
   text-overflow: ellipsis;
 }
 .plat_legende h5 {
-  margin:  0px;
+  margin: 0px;
   padding: 0px;
   padding-left: 20px;
   padding-top: 12px;
@@ -602,8 +599,6 @@ transform: rotate(360deg);
   margin-right: 6px;
 }
 
-
-
 @media screen and (max-width: 600px) {
   :root {
     --largeur_plat: 350px;
@@ -620,10 +615,14 @@ transform: rotate(360deg);
   .resto_legende i {
     right: calc(40px - (370px - 100%) / 4);
   }
-  #choixrestaurant h2 {
+  #choix_restaurant h2 {
     padding-left: 10px;
   }
-  #howtodo {
+  #les_methodes {
     padding-left: 10px;
   }
 }
+@media screen and (max-width: 320px) {
+  :root {
+    --largeur_plat: 260px;
+  }

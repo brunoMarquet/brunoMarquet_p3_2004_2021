@@ -1,6 +1,7 @@
 <html lang="fr">
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>ohmyfood nos restaurants</title>
 
@@ -22,12 +23,7 @@
   <body>
     <div class="spinner">
       <i class="fas fa-spinner fa-spin"></i>
-      <i class="fas fa-spinner fa-pulse num2"></i>
-      <!--  <i class="fas fa-circle-notch fa-spin"></i>
-        <i class="fas fa-sync fa-spin"></i>
-        <i class="fas fa-cog fa-spin"></i>
-        <i class="fas fa-spinner fa-pulse"></i>
-        <i class="fas fa-stroopwafel fa-spin"></i> -->
+      <i class="fas fa-spinner fa-pulse spinner_2"></i>
     </div>
 
     <!-- <div class="loadtransition"></div> -->
@@ -39,7 +35,7 @@
       <form role="search" id="search_initial">
         <i class="fas fa-map-marker-alt"> </i>
         <input
-          id="search_restau"
+          id="recherche_restaurant"
           aria-label="Chercher un restaurant"
           placeholder="Paris, Belleville"
           type="text"
@@ -50,37 +46,34 @@
         <p>Découvrez nos restaurants d'exception, selectionnés par nos soins</p>
         <br />
         <div class="bt_iconique">
-          <a href="#choixrestaurant">Explorer nos restaurants</a>
+          <a href="#choix_restaurant">Explorer nos restaurants</a>
         </div>
       </section>
 
-      <section id="howtodo">
+      <section id="les_methodes">
         <h2>Fonctionnement</h2>
-        <!-- <div id="flex_howtoo"> -->
-        <!--numérotation via le css
-rajout des "<p>" comment y acceder-->
-        <div class="howtoo">
-          <div class="pucenum"></div>
+        <div class="une_methode">
+          <div class="puce_numero"></div>
           <i class="fas fa-mobile-alt"></i>
           <p>Choisissez un restaurant</p>
         </div>
-        <div class="howtoo">
-          <div class="pucenum"></div>
+        <div class="une_methode">
+          <div class="puce_numero"></div>
           <i class="fas fa-list-ul"></i>
           <p>Composez votre menu</p>
         </div>
-        <div class="howtoo">
-          <span class="pucenum"></span><i class="fas fa-store"></i>
+        <div class="une_methode">
+          <span class="puce_numero"></span><i class="fas fa-store"></i>
           <p>Dégustez au restaurant</p>
         </div>
       </section>
     </header>
-    <main id="choixrestaurant">
+    <main id="choix_restaurant">
       <h2>Restaurants</h2>
 
       <!--édité le 13/07/2021, 22:35:44-->
 
-      <article class="restobox">
+      <article class="article_restau">
         <a href="pages/La_palette_du_gout.html">
           <div class="cadre_imag">
             <img
@@ -88,19 +81,19 @@ rajout des "<p>" comment y acceder-->
               alt="La palette du goût: photo de la table 12"
             />
           </div>
-          <div class="new_resto">Nouveau</div>
+          <div class="nouveau_restau">Nouveau</div>
           <div class="resto_legende">
             <div class="resto_txt">
               <h3>La palette du goût</h3>
               <p>Ménilmontant</p>
             </div>
             <div class="les_coeurs">
-              <i class="far fa-heart coeur2"></i>
-              <i class="fas fa-heart coeur1"></i>
+              <i class="far fa-heart"></i>
+              <i class="fas fa-heart"></i>
             </div></div
         ></a>
       </article>
-      <article class="restobox">
+      <article class="article_restau">
         <a href="pages/La_note_enchantee.html">
           <div class="cadre_imag">
             <img
@@ -108,19 +101,19 @@ rajout des "<p>" comment y acceder-->
               alt="le restau ,La_note_enchante à Charonne : photo de Camille ..."
             />
           </div>
-          <div class="new_resto">Nouveau</div>
+          <div class="nouveau_restau">Nouveau</div>
           <div class="resto_legende">
             <div class="resto_txt">
               <h3>La note enchantée</h3>
               <p>Charonne</p>
             </div>
             <div class="les_coeurs">
-              <i class="far fa-heart coeur2"></i>
-              <i class="fas fa-heart coeur1"></i>
+              <i class="far fa-heart"></i>
+              <i class="fas fa-heart"></i>
             </div></div
         ></a>
       </article>
-      <article class="restobox">
+      <article class="article_restau">
         <a href="pages/A_la_francaise.html">
           <div class="cadre_imag">
             <img src="images/restau1.jpg" alt="À la française,coyright Sigma" />
@@ -132,12 +125,12 @@ rajout des "<p>" comment y acceder-->
               <p>Cité Rouge</p>
             </div>
             <div class="les_coeurs">
-              <i class="far fa-heart coeur2"></i>
-              <i class="fas fa-heart coeur1"></i>
+              <i class="far fa-heart"></i>
+              <i class="fas fa-heart"></i>
             </div></div
         ></a>
       </article>
-      <article class="restobox">
+      <article class="article_restau">
         <a href="pages/Le_delice_des_sens.html">
           <div class="cadre_imag">
             <img
@@ -152,8 +145,8 @@ rajout des "<p>" comment y acceder-->
               <p>Folie-Méricourt</p>
             </div>
             <div class="les_coeurs">
-              <i class="far fa-heart coeur2"></i>
-              <i class="fas fa-heart coeur1"></i>
+              <i class="far fa-heart"></i>
+              <i class="fas fa-heart"></i>
             </div></div
         ></a>
       </article>
@@ -173,7 +166,7 @@ rajout des "<p>" comment y acceder-->
         <li><a href="divers/make_up.html">Mentions légales</a></li>
         <li>
           <a
-            href="mailto:ohmyfood@gmail.com?subject=Mail de contact depuis notre site !!!!"
+            href="mailto:ohmyfood@gmail.com?subject=Mail%20de%20contact%20depuis%20notre%20site"
             >Contact</a
           >
         </li>
